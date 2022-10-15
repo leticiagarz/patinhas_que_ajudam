@@ -1,10 +1,14 @@
-﻿Console.WriteLine("(1) Usuário (2) Admnistrador");
+﻿using menu_doacao_doguinhos;
+
+MenuUsuario menuUsuario = new MenuUsuario();
+
+Console.WriteLine("(1) Usuário (2) Admnistrador");
 string opcaoMenu = Console.ReadLine();
 bool l1 = true;
 while(l1)
 if (opcaoMenu == "1")
 {
-    // metodo le
+    menuUsuario.EscolherOpcao();
 }
 else if (opcaoMenu == "2")
 {

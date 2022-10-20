@@ -1,17 +1,21 @@
-﻿Console.WriteLine("(1) Usuário (2) Admnistrador");
-string opcaoMenu = Console.ReadLine();
+﻿using menu_doacao_doguinhos;
+MenuUsuario menuUsuario = new();
 bool l1 = true;
-while(l1)
-if (opcaoMenu == "1")
+while (l1)
 {
-    // metodo le
-}
-else if (opcaoMenu == "2")
-{
-    // metodo cecilia
-}
-else
-{
-    Console.WriteLine("Opção não autorizada");
-    l1 = false;
+    Console.WriteLine("(1) Usuário (2) Admnistrador");
+    var opcaoMenu = int.Parse(Console.ReadLine());
+    Console.Clear();
+    switch (opcaoMenu)
+    {
+        case 1:
+            menuUsuario.OpcaoMenuUsuario();
+            break;
+        case 2:
+ //           metodo cecilia
+            break;
+        default:
+            Console.WriteLine("Opcão inválida");
+            break;
+    }
 }

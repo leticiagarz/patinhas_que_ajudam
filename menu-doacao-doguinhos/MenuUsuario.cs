@@ -11,25 +11,21 @@
 		//ver isso
 		public DateTime Entrega { get; set; }
 		public string Status { get; set; }
-		public MenuUsuario()
-		{
-			string[] MenUsuario = new string[100];
-			for (int i = 0; i < 2; i++)
-			{
-				Console.WriteLine("Nome:");
-				Nome[i] = Console.ReadLine();
-				Console.WriteLine("Idade:");
-				Idade[i] = int.Parse(Console.ReadLine());
-				Console.WriteLine("Porte:");
-				Porte[i] = Convert.ToChar(Console.ReadLine());
-				Console.WriteLine("Sexo:");
-				Sexo[i] = Convert.ToChar(Console.ReadLine());
-				Console.WriteLine("Castrado:");
-				Castrado[i] = Console.ReadLine();
-				Console.WriteLine("Data e hora de entrega:");
-				Entrega[i] = Convert.ToDateTime(Console.ReadLine());
-				break;
-			}
+		public void CadastrarUsuario()
+		{ 
+			Console.WriteLine("Nome:");
+			Nome = Console.ReadLine();
+			Console.WriteLine("Idade:");
+			Idade = int.Parse(Console.ReadLine());
+			Console.WriteLine("Porte:");
+			Porte = Convert.ToChar(Console.ReadLine());
+			Console.WriteLine("Sexo:");
+			Sexo = Convert.ToChar(Console.ReadLine());
+			Console.WriteLine("Castrado:");
+			Castrado = Console.ReadLine();
+			Console.WriteLine("Data e hora de entrega:");
+			Entrega = Convert.ToDateTime(Console.ReadLine());
+		}
 		public void OpcaoMenuUsuario()
 		{
 			bool l2 = true;
@@ -58,26 +54,6 @@
 				}
 			}
 		}
-		public void CadastrarUsuario()
-		{
-			string[] array = new string[1];
-			for (int i = 0; i < 2; i++)
-            {
-				Console.WriteLine("Nome:");
-                Nome[i] = Console.ReadLine();
-				Console.WriteLine("Idade:");
-                Idade[i] = int.Parse(Console.ReadLine());
-				Console.WriteLine("Porte:");
-                Porte[i] = Convert.ToChar(Console.ReadLine());
-				Console.WriteLine("Sexo:");
-                Sexo[i] = Convert.ToChar(Console.ReadLine());
-				Console.WriteLine("Castrado:");
-                Castrado[i] = Console.ReadLine();
-				Console.WriteLine("Data e hora de entrega:");
-                Entrega[i] = Convert.ToDateTime(Console.ReadLine());
-				break;
-			}
-        }
 		public void VerListagem()
         {
             //for (int i = 0; i < Id; i++)
@@ -87,23 +63,22 @@
         }
 		public void Adotar()
         {
-			//		Console.WriteLine("Digite o código do cão que você deseja adotar ou (A) Voltar ");
-			//		string escolha = Console.ReadLine();
-			//		if (escolha == "A")
-			//		{
-			//voltar 
-			//		}
-			//		else
-			//		{
-			//for p/ array?
-			//		}
-			//	}
-
-			//	public void Pesquisar()
-			//	{
-			//		Console.WriteLine("Digite o que você deseja pesquisar:");
-			//		string opcaoPesquisar = Console.ReadLine();
-			//for?
-		}
+			Console.WriteLine("Digite o código do cão que você deseja adotar ou (A) Voltar ");
+            string opcaoMenuUsuario = Console.ReadLine();
+            if (opcaoMenuUsuario == "A")
+            {
+				
+            }
+            else
+			{
+				
+            }
+        }
+        public void Pesquisar()
+        {
+                //		Console.WriteLine("Digite o que você deseja pesquisar:");
+                //		string opcaoPesquisar = Console.ReadLine();
+                //for?
+        }
 	}
 }

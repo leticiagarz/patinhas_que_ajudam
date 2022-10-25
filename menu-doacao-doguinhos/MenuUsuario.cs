@@ -8,7 +8,6 @@
 		public string Porte { get; set; }
 		public string Sexo { get; set; }
 		public string Castrado { get; set; }
-		//ver isso
 		public DateTime Entrega { get; set; }
 		public string Status { get; set; }
 		public void OpcaoMenuUsuario()
@@ -39,38 +38,46 @@
 				}
 			}
 		}
+		public string[] ArrayDoguinhos = new string[100];
 		public void CadastrarUsuario()
 		{
-			Console.WriteLine("Nome: ");
-			Nome = Console.ReadLine();
-			Console.WriteLine("Idade: ");
-			Idade = int.Parse(Console.ReadLine());
-			Console.WriteLine("Porte: (P) Pequeno (M) Médio (G) Grande");
-			Porte = Console.ReadLine();
-			Porte = Porte[0].ToString().ToUpper();
-			Console.WriteLine("Sexo: (F) Fêmea (M) Macho");
-			Sexo = Console.ReadLine();
-			Sexo = Sexo.Substring(0, 1);
-			Sexo.ToUpper();
-			Console.WriteLine("Castrado: (S) Sim (N) Não");
-			Castrado = Console.ReadLine();
-			Castrado = Castrado.Substring(0, 1);
-			Castrado.ToUpper();
-			Console.WriteLine("Data e hora de entrega: ");
-			Entrega = Convert.ToDateTime(Console.ReadLine());
-			Status = "À caminho";
-			Id++;
-			Console.Clear();
-			Console.WriteLine("Doguinho cadastrado");
-			
+            for (int i = 0; i < 100; i++)
+            {
+				Console.WriteLine("Nome: ");
+                Nome = Console.ReadLine();
+                Nome = Nome.First().ToString().ToUpper() + Nome.Substring(1);
+				ArrayDoguinhos[i] = Nome; 
+				Console.WriteLine("Idade: ");
+				Idade = int.Parse(Console.ReadLine());
+				Console.WriteLine("Porte: (P) Pequeno (M) Médio (G) Grande");
+				Porte = Console.ReadLine();
+				Porte = Porte[0].ToString().ToUpper();
+				ValidarPorte();
+				Console.WriteLine("Sexo: (F) Fêmea (M) Macho");
+				Sexo = Console.ReadLine();
+				Sexo = Sexo[0].ToString().ToUpper();
+				ValidarSexo();
+				Console.WriteLine("Castrado: (S) Sim (N) Não");
+				Castrado = Console.ReadLine();
+				Castrado = Castrado[0].ToString().ToUpper();
+				ValidarCastracao();
+				Console.WriteLine("Data e hora de entrega: ");
+				Entrega = Convert.ToDateTime(Console.ReadLine());
+				Status = "À caminho";
+				Id= i + 1;
+				Console.Clear();
+				Console.WriteLine("Doguinho cadastrado");
+				break;
+			}
         }
 		public void VerListagem()
         {
-            //for (int i = 0; i < Id; i++)
-            //{
-            //    Console.WriteLine(arrayUsuario[i]);
-            //}
-            Console.WriteLine($"Id: {Id} - Nome: {Nome} - Idade: {Idade} - Porte: {Porte} - Sexo: {Sexo} - Castração: {Castrado} - Entrega: {Entrega} - Status: {Status}");
+            for (int i = 0; i < ArrayDoguinhos.Length; i++)
+            {
+				Console.WriteLine($"Id: {i} - Nome: {Nome} - Idade: {Idade} - Porte: {Porte} - Sexo: {Sexo} - Castração: {Castrado} - Entrega: {Entrega} - Status: {Status}");
+				break;
+			}
+            
         }
 		public void Adotar()
         {
@@ -103,7 +110,8 @@
 			}
 			else
 			{
-				Console.WriteLine("Opção inválida");
+				//ficou estranho mas com o front não será necessário
+				//Console.WriteLine("Opção inválida");
 			}
 		}
 		public void ValidarPorte()
@@ -122,7 +130,8 @@
 			}
 			else
 			{
-				Console.WriteLine("Opção inválida");
+				//ficou estranho mas com o front não será necessário
+				//Console.WriteLine("Opção inválida");
 			}
 		}
 		public void ValidarCastracao()
@@ -137,9 +146,18 @@
             }
 			else
             {
-				Console.WriteLine("Opção inválida");
+				//ficou estranho mas com o front não será necessário
+				//Console.WriteLine("Opção inválida");
 			}
+        }
+		public void ValidarOpcaoInvalida()
+        {
+			// nao sei se vai precisar
+        }
+		public void DefinirArray()
+        {
 			
+
         }
 	}
 }

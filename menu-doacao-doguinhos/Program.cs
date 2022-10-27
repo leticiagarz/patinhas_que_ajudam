@@ -1,5 +1,6 @@
 ﻿using menu_doacao_doguinhos;
 MenuUsuario menuUsuario = new();
+MenuAdmin menuAdmin = new();
 bool l1 = true;
 while (l1)
 {
@@ -12,7 +13,7 @@ while (l1)
             menuUsuario.OpcaoMenuUsuario();
             break;
         case 2:
- //           metodo cecilia
+            menuAdmin.OpcaoMenuAdmin();
             break;
         default:
             Console.WriteLine("Opcão inválida");

@@ -1,5 +1,5 @@
 ﻿using menu_doacao_doguinhos;
-MenuUsuario menuUsuario = new();
+Cao menuUsuario = new();
 bool l1 = true;
 while (l1)
 {

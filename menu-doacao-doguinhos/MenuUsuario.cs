@@ -1,6 +1,6 @@
 ﻿namespace menu_doacao_doguinhos
 {
-	public class Cao
+	public class MenuUsuario
 	{
 		public int Id { get; set; }
 		public string Nome { get; set; }
@@ -14,11 +14,11 @@
         {
             
         };
-        public Cao()
+        public MenuUsuario()
 		{
 
 		}
-		public Cao(int id, string nome, int idade, string porte, string sexo, string castrado, DateTime entrega, string status)
+		public MenuUsuario(int id, string nome, int idade, string porte, string sexo, string castrado, DateTime entrega, string status)
 		{
             Id = 0;
 			Nome = nome;

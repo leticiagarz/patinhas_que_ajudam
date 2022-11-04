@@ -1,163 +1,137 @@
 ﻿namespace menu_doacao_doguinhos
 {
-	public class MenuUsuario
-	{
-		public int Id { get; set; }
-		public string Nome { get; set; }
-		public int Idade { get; set; }
-		public string Porte { get; set; }
-		public string Sexo { get; set; }
-		public string Castrado { get; set; }
-		public DateTime Entrega { get; set; }
-		public string Status { get; set; }
-		public void OpcaoMenuUsuario()
-		{
-			bool l2 = true;
-			while (l2)
-			{
-				Console.WriteLine("(1) Ver listagem (2) Adotar (3) Enviar cão (4) Voltar");
-				var opcaoMenuUsuario = int.Parse(Console.ReadLine());
-				Console.Clear();
-				switch (opcaoMenuUsuario)
-				{
-					case 1:
-						VerListagem();
-						break;
-					case 2:
-						Adotar();
-						break;
-					case 3:
-						CadastrarUsuario();
-						break;
-					case 4:
-						l2 = false;
-						break;
-					default:
-						Console.WriteLine("Opção inválida");
-						break;
-				}
-			}
-		}
-		public string[] ArrayDoguinhos = new string[100];
-		public void CadastrarUsuario()
-		{
-            for (int i = 0; i < 100; i++)
-            {
-				Console.WriteLine("Nome: ");
-                Nome = Console.ReadLine();
-                Nome = Nome.First().ToString().ToUpper() + Nome.Substring(1);
-				ArrayDoguinhos[i] = Nome; 
-				Console.WriteLine("Idade: ");
-				Idade = int.Parse(Console.ReadLine());
-				Console.WriteLine("Porte: (P) Pequeno (M) Médio (G) Grande");
-				Porte = Console.ReadLine();
-				Porte = Porte[0].ToString().ToUpper();
-				ValidarPorte();
-				Console.WriteLine("Sexo: (F) Fêmea (M) Macho");
-				Sexo = Console.ReadLine();
-				Sexo = Sexo[0].ToString().ToUpper();
-				ValidarSexo();
-				Console.WriteLine("Castrado: (S) Sim (N) Não");
-				Castrado = Console.ReadLine();
-				Castrado = Castrado[0].ToString().ToUpper();
-				ValidarCastracao();
-				Console.WriteLine("Data e hora de entrega: ");
-				Entrega = Convert.ToDateTime(Console.ReadLine());
-				Status = "À caminho";
-				Id= i + 1;
-				Console.Clear();
-				Console.WriteLine("Doguinho cadastrado");
-				break;
-			}
-        }
-		public void VerListagem()
+    public class MenuUsuario
+    {
+        public List<Cachorro> Cachocaos { get; set; }
+
+        public MenuUsuario()
         {
-            for (int i = 0; i < ArrayDoguinhos.Length; i++)
-            {
-				Console.WriteLine($"Id: {i} - Nome: {Nome} - Idade: {Idade} - Porte: {Porte} - Sexo: {Sexo} - Castração: {Castrado} - Entrega: {Entrega} - Status: {Status}");
-				break;
-			}
-            
+            Cachocaos = new List<Cachorro>();
         }
-		public void Adotar()
+
+        public void OpcaoMenuUsuario()
         {
-			//Console.WriteLine("Digite o código do cão que você deseja adotar ou (A) Voltar ");
-   //         string opcaoMenuUsuario = Console.ReadLine();
-   //         if (opcaoMenuUsuario == "A")
-   //         {
-				
-   //         }
-   //         else
-			//{
-				
-   //         }
+            bool l2 = true;
+            while (l2)
+            {
+                Console.WriteLine("(1) Ver listagem (2) Pesquisar (3) Adotar (4) Enviar cão (5) Voltar");
+                var opcaoMenuUsuario = int.Parse(Console.ReadLine());
+                Console.Clear();
+                switch (opcaoMenuUsuario)
+                {
+                    case 1:
+                        VerListagem();
+                        break;
+                    case 2:
+                        Pesquisar();
+                        break;
+                    case 3:
+                        Adotar();
+                        break;
+                    case 4:
+                        CadastrarUsuario();
+                        break;
+                    case 5:
+                        l2 = false;
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida");
+                        break;
+                }
+            }
+        }
+        public void CadastrarUsuario()
+        {
+            var cachorro = new Cachorro();
+
+            Console.WriteLine("Nome: ");
+            cachorro.Nome = Console.ReadLine();
+            cachorro.Nome = cachorro.Nome.First().ToString().ToUpper() + cachorro.Nome.Substring(1);
+
+            Console.WriteLine("Idade: ");
+            cachorro.Idade = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Porte: (P) Pequeno (M) Médio (G) Grande");
+            cachorro.Porte = Console.ReadLine();
+            cachorro.Porte = cachorro.Porte[0].ToString().ToUpper();
+            ValidarNomePorte(cachorro);
+
+            Console.WriteLine("Sexo: (F) Fêmea (M) Macho");
+            cachorro.Sexo = Console.ReadLine();
+            cachorro.Sexo = cachorro.Sexo[0].ToString().ToUpper();
+            ValidarNomeSexo(cachorro);
+
+            Console.WriteLine("Castrado: (S) Sim (N) Não");
+            cachorro.Castrado = Console.ReadLine();
+            cachorro.Castrado = cachorro.Castrado[0].ToString().ToUpper();
+            ValidarNomeCastracao(cachorro);
+
+            Console.WriteLine("Data e hora de entrega: ");
+            cachorro.Entrega = Convert.ToDateTime(Console.ReadLine());
+
+            cachorro.Status = "À caminho";
+
+            var ultimoCachorro = Cachocaos.LastOrDefault();
+            cachorro.Id = ultimoCachorro is null ? 0 : ultimoCachorro.Id + 1;
+
+            Console.Clear();
+            Cachocaos.Add(cachorro);
+            Console.WriteLine("Doguinho cadastrado");
+        }
+        public void VerListagem()
+        {
+            foreach (var item in Cachocaos)
+            {
+                item.Listagem();
+            }
+        }
+        public void Adotar()
+        {
+
         }
         public void Pesquisar()
         {
-                //		Console.WriteLine("Digite o que você deseja pesquisar:");
-                //		string opcaoPesquisar = Console.ReadLine();
-                //for?
+            Console.WriteLine("Pesquise aqui: ");
+            var str = Console.ReadLine();
+            var pesquisa = Cachocaos.Find(x => x.Nome == str || x.Castrado == str);
+            pesquisa.Listagem();
         }
-		public void ValidarSexo()
+        public void ValidarNomeSexo(Cachorro cachorro)
         {
-			if (Sexo == "M")
-			{
-				Sexo = "Macho";
-			}
-			else if (Sexo == "F")
-			{
-				Sexo = "Fêmea";
-			}
-			else
-			{
-				//ficou estranho mas com o front não será necessário
-				//Console.WriteLine("Opção inválida");
-			}
-		}
-		public void ValidarPorte()
-        {
-			if (Porte == "P")
-			{
-				Porte = "Pequeno";
-			}
-			else if (Porte == "M")
-			{
-				Porte = "Médio";
-			}
-			else if (Porte == "G")
-			{
-				Porte = "Grande";
-			}
-			else
-			{
-				//ficou estranho mas com o front não será necessário
-				//Console.WriteLine("Opção inválida");
-			}
-		}
-		public void ValidarCastracao()
-        {
-			if (Castrado == "S")
+            if (cachorro.Sexo == "M")
             {
-				Castrado = "Sim";
+                cachorro.Sexo = "Macho";
             }
-			else if (Castrado == "N")
+            else if (cachorro.Sexo == "F")
             {
-				Castrado = "Não";
+                cachorro.Sexo = "Fêmea";
             }
-			else
+        }
+        public void ValidarNomePorte(Cachorro cachorro)
+        {
+            if (cachorro.Porte == "P")
             {
-				//ficou estranho mas com o front não será necessário
-				//Console.WriteLine("Opção inválida");
-			}
+                cachorro.Porte = "Pequeno";
+            }
+            else if (cachorro.Porte == "M")
+            {
+                cachorro.Porte = "Médio";
+            }
+            else if (cachorro.Porte == "G")
+            {
+                cachorro.Porte = "Grande";
+            }
         }
-		public void ValidarOpcaoInvalida()
+        public void ValidarNomeCastracao(Cachorro cachorro)
         {
-			// nao sei se vai precisar
+            if (cachorro.Castrado == "S")
+            {
+                cachorro.Castrado = "Sim";
+            }
+            else if (cachorro.Castrado == "N")
+            {
+                cachorro.Castrado = "Não";
+            }
         }
-		public void DefinirArray()
-        {
-			
-
-        }
-	}
+    }
 }

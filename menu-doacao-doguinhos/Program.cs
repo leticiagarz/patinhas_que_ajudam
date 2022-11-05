@@ -13,7 +13,7 @@ while (loopingMenuPrincipal)
             menuUsuario.OpcaoMenuUsuario();
             break;
         case 2:
-            menuAdmin.OpcaoMenuAdmin();
+            menuAdmin.OpcaoLoginAdmin();
             break;
         default:
             Console.WriteLine("Opcão inválida");

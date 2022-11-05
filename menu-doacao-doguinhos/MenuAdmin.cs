@@ -3,91 +3,84 @@ namespace menu_doacao_doguinhos
 {
     public class MenuAdmin
     {
-        public void OpcaoMenuAdmin()
+        public void OpcaoLoginAdmin()
         {
-            bool loop = true;
-            while (loop)
+            bool loopingLoginAdmin = true;
+            while (loopingLoginAdmin)
             {
-                Console.WriteLine("Selecione umas das opções do menu:");
-                Console.WriteLine("1 - Login\n2 - Voltar ao menu principal\n");
-                string opcaoMenuAdmin = Console.ReadLine();
-
-                if (opcaoMenuAdmin == "1")
+                Console.WriteLine("(1) Login (2) Voltar");
+                var opcaoLoginAdmin = int.Parse(Console.ReadLine());
+                Console.Clear();
+                switch (opcaoLoginAdmin)
                 {
-                    Logar();
-                }
-                else if(opcaoMenuAdmin == "2")
-                {
-                    loop = false;
-                }
-                else
-                {
-                    Console.WriteLine("Selecione uma opção válida");
+                    case 1:
+                        Logar();
+                        break;
+                    case 2:
+                        loopingLoginAdmin = false;
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida");
+                        break;
                 }
             }
         }
         public void Logar()
         {
-                Console.WriteLine("Digite seu número de user");
-                int UserDigitado = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Digite sua senha");
+                Console.WriteLine("Usuário: ");
+                int usuarioDigitado = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Senha: ");
                 int senhaDigitada = Convert.ToInt32(Console.ReadLine());
-
-                if (UserDigitado != 1021 || senhaDigitada != 1312)
+                Console.Clear();
+                if (usuarioDigitado != 1021 || senhaDigitada != 1312)
                 {
-                    Console.Clear();
+                    
                     Console.WriteLine("Acesso não autorizado");
                 }
                 else
                 {
-                    Console.WriteLine("Bem-vindo ao sistema");
-                    OpcaoLogin();
-
+                    OpcaoMenuAdmin();
                 }
-            
-            
         }
-        public void OpcaoLogin()
+        public void OpcaoMenuAdmin()
         {
-            bool loop = true;
-
-            while (loop)
+            MenuUsuario menuUsuario = new MenuUsuario();
+            bool loopingMenuAdmin = true;
+            while (loopingMenuAdmin)
             {
-                Console.WriteLine("Escolha uma ação para continuar:\n 1 - Ver Listagem \n 2 - Cadastrar cães\n 3 - Alterar Status\n 4 - Voltar para login ");
-                string opcaoMenuLogin = Console.ReadLine();
-
-                if(opcaoMenuLogin == "1")
+                Console.WriteLine("(1) Ver Listagem (2) Pesquisar (3) Alterar status (4) Excluir (5) Cadastrar cão (6) Voltar");
+                var opcaoMenuAdmin = int.Parse(Console.ReadLine());
+                switch (opcaoMenuAdmin)
                 {
-                    Listagem();
-                }
-                else if (opcaoMenuLogin == "2")
-                {
-                    CadastrarCaes();
-                }
-                else if (opcaoMenuLogin == "3")
-                {
-                    AlterarStatus();
-                }
-                else if(opcaoMenuLogin == "4")
-                {
-                    loop = false;
-                }
-                else
-                {
-                    Console.WriteLine("Selecione uma opção válida");
+                    case 1:
+                        menuUsuario.VerListagem();
+                        break;
+                    case 2:
+                        menuUsuario.Pesquisar();
+                        break;
+                    case 3:
+                        AlterarStatus();
+                        break;
+                    case 4:
+                        ExcluirCao();
+                        break;
+                    case 5:
+                       // menuUsuario.CadastarCao();
+                        break;
+                    case 6:
+                        loopingMenuAdmin = false;
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida");
+                        break;
                 }
             }
         }
-        public void Listagem()
-        {
-
-        }
-        public void CadastrarCaes()
-        {
-
-
-        }
         public void AlterarStatus()
+        {
+
+        }
+        public void ExcluirCao()
         {
 
         }

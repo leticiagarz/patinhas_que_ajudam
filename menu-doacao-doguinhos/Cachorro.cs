@@ -27,13 +27,13 @@ namespace menu_doacao_doguinhos
 		public void Listagem()
         {
             Console.WriteLine(Id);
-            Console.WriteLine(Nome);
-            Console.WriteLine(Idade);
-            Console.WriteLine(Porte);
-            Console.WriteLine(Sexo);
-            Console.WriteLine(Castrado);
-            Console.WriteLine(Entrega.ToString("dd/MM/yyyy"));
-            Console.WriteLine(Status);
+            Console.WriteLine($"Nome: {Nome}");
+            Console.WriteLine($"Idade: {Idade}");
+            Console.WriteLine($"Porte: {Porte}");
+            Console.WriteLine($"Sexo: {Sexo}");
+            Console.WriteLine($"Castrado: {Castrado}");
+            Console.WriteLine($"Entrega em:{Entrega.ToString("dd/MM/yyyy hh:mm")}");
+            Console.WriteLine($"Status: {Status}");
             Console.WriteLine("\n");
         }
 	}

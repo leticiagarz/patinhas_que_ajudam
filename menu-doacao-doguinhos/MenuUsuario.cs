@@ -11,8 +11,8 @@
 
         public void OpcaoMenuUsuario()
         {
-            bool l2 = true;
-            while (l2)
+            bool loopingMenuUsuario = true;
+            while (loopingMenuUsuario)
             {
                 Console.WriteLine("(1) Ver listagem (2) Pesquisar (3) Adotar (4) Enviar cão (5) Voltar");
                 var opcaoMenuUsuario = int.Parse(Console.ReadLine());
@@ -29,10 +29,10 @@
                         Adotar();
                         break;
                     case 4:
-                        CadastrarUsuario();
+                        CadastrarCao();
                         break;
                     case 5:
-                        l2 = false;
+                        loopingMenuUsuario = false;
                         break;
                     default:
                         Console.WriteLine("Opção inválida");
@@ -40,12 +40,13 @@
                 }
             }
         }
-        public void CadastrarUsuario()
+        public void CadastrarCao()
         {
             var cachorro = new Cachorro();
 
             Console.WriteLine("Nome: ");
             cachorro.Nome = Console.ReadLine();
+            ValidarEmBranco(cachorro);
             cachorro.Nome = cachorro.Nome.First().ToString().ToUpper() + cachorro.Nome.Substring(1);
 
             Console.WriteLine("Idade: ");
@@ -53,11 +54,13 @@
 
             Console.WriteLine("Porte: (P) Pequeno (M) Médio (G) Grande");
             cachorro.Porte = Console.ReadLine();
+            ValidarEmBranco(cachorro);
             cachorro.Porte = cachorro.Porte[0].ToString().ToUpper();
             ValidarNomePorte(cachorro);
 
             Console.WriteLine("Sexo: (F) Fêmea (M) Macho");
             cachorro.Sexo = Console.ReadLine();
+            ValidarEmBranco(cachorro);
             cachorro.Sexo = cachorro.Sexo[0].ToString().ToUpper();
             ValidarNomeSexo(cachorro);
 
@@ -87,14 +90,39 @@
         }
         public void Adotar()
         {
-
+            Console.WriteLine("Digite o código do cachorro que você deseja adotar: ");
+            int cachorroASerAdotado = int.Parse(Console.ReadLine());
+            var adotarCachorro = Cachocaos.Where(x => x.Id == cachorroASerAdotado);
+            if (adotarCachorro != null && adotarCachorro.Any())
+            {
+                foreach (var item in adotarCachorro)
+                {
+                    item.Status = "Em processo de adoção";
+                }
+                Console.WriteLine("Dirija-se ao canil para completar a adoção");
+            }
+            else
+            {
+                Console.WriteLine("Não encontrado");
+            }
         }
         public void Pesquisar()
         {
             Console.WriteLine("Pesquise aqui: ");
             var str = Console.ReadLine();
-            var pesquisa = Cachocaos.Find(x => x.Nome == str || x.Castrado == str);
-            pesquisa.Listagem();
+            var pesquisas = Cachocaos.Where(x => x.Nome == str || x.Porte == str || x.Sexo == str).ToList();
+
+            if (pesquisas != null && pesquisas.Any())
+            {
+                foreach (var item in pesquisas)
+                {
+                    item.Listagem();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Não encontrado");
+            }
         }
         public void ValidarNomeSexo(Cachorro cachorro)
         {
@@ -132,6 +160,36 @@
             {
                 cachorro.Castrado = "Não";
             }
+        }
+        public void ValidarEmBranco(Cachorro cachorro)
+        {
+            var loopingDoValidarBranco = true;
+            while (loopingDoValidarBranco)
+            {
+                if (cachorro.Nome == "")
+                {
+                    Console.WriteLine("O preenchimento é obrigatório");
+                    Console.WriteLine("Nome: ");
+                    cachorro.Nome = Console.ReadLine();
+                }
+                else if (cachorro.Porte == "")
+                {
+                    Console.WriteLine("O preenchimento é obrigatório");
+                    Console.WriteLine("Porte: (P) Pequeno (M) Médio (G) Grande");
+                    cachorro.Porte = Console.ReadLine();
+                }
+                else if (cachorro.Sexo == "")
+                {
+                    Console.WriteLine("O preenchimento é obrigatório");
+                    Console.WriteLine("Sexo: (F) Fêmea (M) Macho");
+                    cachorro.Sexo = Console.ReadLine();
+                }
+                else
+                {
+                    loopingDoValidarBranco = false;
+                }
+            }
+
         }
     }
 }

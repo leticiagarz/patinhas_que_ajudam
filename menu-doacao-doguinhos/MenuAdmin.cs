@@ -65,7 +65,7 @@ namespace menu_doacao_doguinhos
                         ExcluirCao();
                         break;
                     case 5:
-                       // menuUsuario.CadastarCao();
+                        menuUsuario.CadastrarCao();
                         break;
                     case 6:
                         loopingMenuAdmin = false;

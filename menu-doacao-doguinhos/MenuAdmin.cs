@@ -3,21 +3,9 @@ namespace menu_doacao_doguinhos
 {
     public class MenuAdmin
     {
-        
-
-        public int Admins { get; set; }
-        public string Nome { get; set; }
-        public int Idade { get; set; }
-        public bool Castracao { get; set; }
-        public char Sexo { get; set; }
-        public char Porte { get; set; }
-
-
         public void OpcaoMenuAdmin()
         {
-
             bool loop = true;
-
             while (loop)
             {
                 Console.WriteLine("Selecione umas das opções do menu:");

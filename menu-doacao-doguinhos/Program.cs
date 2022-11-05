@@ -1,13 +1,13 @@
 ﻿using menu_doacao_doguinhos;
 MenuUsuario menuUsuario = new();
 MenuAdmin menuAdmin = new();
-bool l1 = true;
-while (l1)
+bool loopingMenuPrincipal = true;
+while (loopingMenuPrincipal)
 {
     Console.WriteLine("(1) Usuário (2) Admnistrador");
-    var opcaoMenu = int.Parse(Console.ReadLine());
+    var opcaoMenuPrincipal = int.Parse(Console.ReadLine());
     Console.Clear();
-    switch (opcaoMenu)
+    switch (opcaoMenuPrincipal)
     {
         case 1:
             menuUsuario.OpcaoMenuUsuario();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace menu_doacao_doguinhos
 {
-    public class Cachorro
+    public class Cao
     {
 		public int Id { get; set; }
 
@@ -26,13 +26,13 @@ namespace menu_doacao_doguinhos
 
 		public void Listagem()
         {
-            Console.WriteLine(Id);
+            Console.WriteLine($"ID: {Id}");
             Console.WriteLine($"Nome: {Nome}");
             Console.WriteLine($"Idade: {Idade}");
             Console.WriteLine($"Porte: {Porte}");
             Console.WriteLine($"Sexo: {Sexo}");
             Console.WriteLine($"Castrado: {Castrado}");
-            Console.WriteLine($"Entrega em:{Entrega.ToString("dd/MM/yyyy hh:mm")}");
+            Console.WriteLine($"Entrega em: {Entrega.ToString("dd/MM/yyyy")}");
             Console.WriteLine($"Status: {Status}");
             Console.WriteLine("\n");
         }

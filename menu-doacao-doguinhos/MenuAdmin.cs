@@ -3,18 +3,20 @@ namespace menu_doacao_doguinhos
 {
     public class MenuAdmin
     {
-        public void OpcaoLoginAdmin()
+        public void OpcaoLoginAdmin(FuncoesEvalidacoes funcoesEValidacoes)
         {
             bool loopingLoginAdmin = true;
+
             while (loopingLoginAdmin)
             {
                 Console.WriteLine("(1) Login (2) Voltar");
                 var opcaoLoginAdmin = int.Parse(Console.ReadLine());
                 Console.Clear();
+
                 switch (opcaoLoginAdmin)
                 {
                     case 1:
-                        Logar();
+                        Logar(funcoesEValidacoes);
                         break;
                     case 2:
                         loopingLoginAdmin = false;
@@ -25,47 +27,50 @@ namespace menu_doacao_doguinhos
                 }
             }
         }
-        public void Logar()
+        public void Logar(FuncoesEvalidacoes funcoesEValidacoes)
         {
                 Console.WriteLine("Usuário: ");
                 int usuarioDigitado = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Senha: ");
                 int senhaDigitada = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
-                if (usuarioDigitado != 1021 || senhaDigitada != 1312)
+
+                if (usuarioDigitado != 1234 || senhaDigitada != 1234)
                 {
                     
                     Console.WriteLine("Acesso não autorizado");
                 }
                 else
                 {
-                    OpcaoMenuAdmin();
+                    OpcaoMenuAdmin(funcoesEValidacoes);
                 }
         }
-        public void OpcaoMenuAdmin()
+        public void OpcaoMenuAdmin(FuncoesEvalidacoes funcoesEValidacoes)
         {
-            MenuUsuario menuUsuario = new MenuUsuario();
             bool loopingMenuAdmin = true;
+
             while (loopingMenuAdmin)
             {
                 Console.WriteLine("(1) Ver Listagem (2) Pesquisar (3) Alterar status (4) Excluir (5) Cadastrar cão (6) Voltar");
                 var opcaoMenuAdmin = int.Parse(Console.ReadLine());
+                Console.Clear();
+
                 switch (opcaoMenuAdmin)
                 {
                     case 1:
-                        menuUsuario.VerListagem();
+                        funcoesEValidacoes.VerListagem();
                         break;
                     case 2:
-                        menuUsuario.Pesquisar();
+                        funcoesEValidacoes.Pesquisar();
                         break;
                     case 3:
-                        AlterarStatus();
+                        funcoesEValidacoes.AlterarStatus();
                         break;
                     case 4:
-                        ExcluirCao();
+                        funcoesEValidacoes.ExcluirCao();
                         break;
                     case 5:
-                        menuUsuario.CadastrarCao();
+                        funcoesEValidacoes.CadastrarCao();
                         break;
                     case 6:
                         loopingMenuAdmin = false;
@@ -75,14 +80,6 @@ namespace menu_doacao_doguinhos
                         break;
                 }
             }
-        }
-        public void AlterarStatus()
-        {
-
-        }
-        public void ExcluirCao()
-        {
-
         }
     }
 }

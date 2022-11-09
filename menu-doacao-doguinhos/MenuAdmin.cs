@@ -3,6 +3,8 @@ namespace menu_doacao_doguinhos
 {
     public class MenuAdmin
     {
+        public int Usuario { get; set; } = 1234;
+        public int Senha { get; set; } = 1234;
         public void OpcaoLoginAdmin(FuncoesEvalidacoes funcoesEValidacoes)
         {
             bool loopingLoginAdmin = true;
@@ -29,21 +31,20 @@ namespace menu_doacao_doguinhos
         }
         public void Logar(FuncoesEvalidacoes funcoesEValidacoes)
         {
-                Console.WriteLine("Usuário: ");
-                int usuarioDigitado = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Senha: ");
-                int senhaDigitada = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
+            Console.WriteLine("Usuário: ");
+            int usuarioDigitado = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Senha: ");
+            int senhaDigitada = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
 
-                if (usuarioDigitado != 1234 || senhaDigitada != 1234)
-                {
-                    
-                    Console.WriteLine("Acesso não autorizado");
-                }
-                else
-                {
-                    OpcaoMenuAdmin(funcoesEValidacoes);
-                }
+            if (usuarioDigitado != Usuario || senhaDigitada != Senha)
+            {
+                Console.WriteLine("Acesso não autorizado");
+            }
+            else
+            {
+                OpcaoMenuAdmin(funcoesEValidacoes);
+            }
         }
         public void OpcaoMenuAdmin(FuncoesEvalidacoes funcoesEValidacoes)
         {

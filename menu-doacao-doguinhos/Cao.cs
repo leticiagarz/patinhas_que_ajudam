@@ -8,23 +8,23 @@ namespace menu_doacao_doguinhos
 {
     public class Cao
     {
-		public int Id { get; set; }
+        public int Id { get; set; }
 
-		public string Nome { get; set; }
+        public string Nome { get; set; }
 
-		public int Idade { get; set; }
+        public int Idade { get; set; } = 0;
 
-		public string Porte { get; set; }
+        public string Porte { get; set; }
 
-		public string Sexo { get; set; }
+        public string Sexo { get; set; }
 
-		public string Castrado { get; set; }
+        public string Castrado { get; set; }
 
-		public DateTime Entrega { get; set; }
+        public DateTime Entrega { get; set; }
 
-		public string Status { get; set; }
+        public string Status { get; set; }
 
-		public void Listagem()
+        public void Listagem()
         {
             Console.WriteLine($"ID: {Id}");
             Console.WriteLine($"Nome: {Nome}");
@@ -36,5 +36,5 @@ namespace menu_doacao_doguinhos
             Console.WriteLine($"Status: {Status}");
             Console.WriteLine("\n");
         }
-	}
+    }
 }

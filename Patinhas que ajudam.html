@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Patinhas Que Ajudam</title>
+        <style>
+            * {
+            text-align: center;
+            }
+            #title {
+            font-family: sans-serif;
+            color: rgb(185, 48, 75);
+            } 
+            body{
+                background-color: rgb(255, 192, 205);
+            } 
+            .card{
+                background-color: white;
+                text-align: center;
+                box-shadow: 0 4px 22px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+                border-radius: 10px; 
+                width: 30%;
+                margin: 0 auto;
+                margin-top: 80px;
+            }
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+            .container {
+                padding: 10px 6px;
+            }
+            div input, form input{
+                display: block;
+                background: none;
+                margin: 18px auto;
+                padding: 8px;
+                border-radius: 8px;
+                border: 2px solid rgb(185, 48, 75);
+                outline: none;
+            }
+            form input[type = "submit"]{
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 800;
+                background: rgb(185, 48, 75);
+                color: whitesmoke;
+            }
+        </style>
+        <script>
+            
+            /*const inputUser = document.getElementById("input-user");
+            const inputPassword = document.getElementById("input-password");
+            const inputButton = document.getElementById("input-button");
+            const paragrafoStatus = document.getElementById("");
+
+            const comunicarBackend = async function() {
+                const req = await fetch ('')
+            }
+            */
+
+            function validate(){
+            let username = document.getElementById("input-user").value;
+            let password = document.getElementById("input-password").value;
+    
+            if(username == "admin" && password == "user"){
+            alert("ok");
+            window.location.href = "MenuAdmin.html";
+            return false;
+            }
+            else{
+            alert("amaro");
+            }
+             }
+            function myFunction() { 
+    document.getElementById("cardContainer").style.display="none"; 
+    document.getElementById("secondCardContainer").style.display="block"; 
+            }
+        </script>
+    </head>
+<body>
+    <h1 id="title">Patinhas Que Ajudam</h1>
+    <p id="subtitle">Não compre, adote!</p>
+    <div id="cardContainer">
+        <div class ="card">
+            <div class="container">
+        <h4>Selecione um menu:</h4>
+        <p><input type="submit" value="Menu Usuario" onclick="location.href = 'MenuUsuario.html';"></p>
+        <p><input type="submit" value="Menu Admin" onclick="myFunction()"></p>
+            </div>
+        </div>
+    </div>
+    <div id="secondCardContainer" style="display:none;">
+        <div class ="card">
+            <div class="container">
+                <form>
+                <h3>Login</h3>
+                <input id="input-user" type="text" name="username" placeholder="Usuário">
+                <input id="input-password" type="password" name="password" placeholder="Senha">
+                <input id="input-button" type="submit" value="Entrar" onclick="validate()">
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

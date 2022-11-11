@@ -20,30 +20,28 @@ namespace menu_doacao_doguinhos
             Console.WriteLine("Os itens marcados com * são obrigatórios");
             Console.WriteLine("* Nome: ");
             cao.Nome = Console.ReadLine();
-            ValidarEmBranco(cao);
+            ValidarInputNome(cao);
             cao.Nome = cao.Nome.First().ToString().ToUpper() + cao.Nome.Substring(1);
 
             Console.WriteLine("Idade: ");
-            cao.Idade = Convert.ToInt32(Console.ReadLine());
-            ValidarEmBranco(cao);
+            ValidarInputIdade(cao);
 
             Console.WriteLine("* Porte: (P) Pequeno (M) Médio (G) Grande");
             cao.Porte = Console.ReadLine();
             ValidarEmBranco(cao);
             cao.Porte = cao.Porte[0].ToString().ToUpper();
-            ValidarPalavraPorte(cao);
+            ValidarInputPorte(cao);
 
             Console.WriteLine("* Sexo: (F) Fêmea (M) Macho");
             cao.Sexo = Console.ReadLine();
-            ValidarEmBranco(cao);
+            ValidarInputSexo(cao);
             cao.Sexo = cao.Sexo[0].ToString().ToUpper();
-            ValidarPalavraSexo(cao);
 
             Console.WriteLine("Castrado: (S) Sim (N) Não");
             cao.Castrado = Console.ReadLine();
             ValidarEmBranco(cao);
             cao.Castrado = cao.Castrado[0].ToString().ToUpper();
-            ValidarPalavraCastracao(cao);
+            ValidarInputCastrado(cao);
 
             Console.WriteLine("Data de entrega: ");
             cao.Entrega = Convert.ToDateTime(Console.ReadLine());
@@ -179,18 +177,30 @@ namespace menu_doacao_doguinhos
                 Console.WriteLine("Não encontrado");
             }
         }
-        public void ValidarPalavraSexo(Cao cao)
+        public void ValidarInputNome (Cao cao)
         {
-            if (cao.Sexo == "M")
+            while (cao.Nome == "")
             {
-                cao.Sexo = "Macho";
-            }
-            else if (cao.Sexo == "F")
-            {
-                cao.Sexo = "Fêmea";
+                Console.WriteLine("O preenchimento é obrigatório");
+                Console.WriteLine("Nome: ");
+                cao.Nome = Console.ReadLine();
             }
         }
-        public void ValidarPalavraPorte(Cao cao)
+        public void ValidarInputIdade (Cao cao)
+        {
+            var idade = Console.ReadLine();
+            var conseguiuConverter = int.TryParse(idade, out var result);
+            if (!conseguiuConverter)
+            {
+                Console.WriteLine("O preenchimento é obrigatório");
+                Console.WriteLine("Idade: ");
+                idade = Console.ReadLine();
+                ValidarInputIdade(cao);
+            }
+            conseguiuConverter = int.TryParse(idade, out result);
+            cao.Idade = result;
+        }
+        public void ValidarInputPorte(Cao cao)
         {
             if (cao.Porte == "P")
             {
@@ -204,8 +214,31 @@ namespace menu_doacao_doguinhos
             {
                 cao.Porte = "Grande";
             }
+            while (cao.Porte == "")
+            {
+                Console.WriteLine("O preenchimento é obrigatório");
+                Console.WriteLine("Porte: (P) Pequeno (M) Médio (G) Grande");
+                cao.Porte = Console.ReadLine();
+            }
         }
-        public void ValidarPalavraCastracao(Cao cao)
+        public void ValidarInputSexo(Cao cao)
+        {
+            if (cao.Sexo == "M")
+            {
+                cao.Sexo = "Macho";
+            }
+            else if (cao.Sexo == "F")
+            {
+                cao.Sexo = "Fêmea";
+            }
+            while (cao.Sexo == "")
+            {
+                Console.WriteLine("O preenchimento é obrigatório");
+                Console.WriteLine("Sexo: (F) Fêmea (M) Macho");
+                cao.Sexo = Console.ReadLine();
+            }
+        }
+        public void ValidarInputCastrado(Cao cao)
         {
             if (cao.Castrado == "S")
             {
@@ -221,31 +254,6 @@ namespace menu_doacao_doguinhos
             var loopingDoValidarBranco = true;
             while (loopingDoValidarBranco)
             {
-                if (cao.Nome == "")
-                {
-                    Console.WriteLine("O preenchimento é obrigatório");
-                    Console.WriteLine("Nome: ");
-                    cao.Nome = Console.ReadLine();
-                    ValidarEmBranco(cao);
-                }
-                if (cao.Porte == "")
-                {
-                    Console.WriteLine("O preenchimento é obrigatório");
-                    Console.WriteLine("Porte: (P) Pequeno (M) Médio (G) Grande");
-                    cao.Porte = Console.ReadLine();
-                    ValidarEmBranco(cao);
-                }
-                if (cao.Sexo == "")
-                {
-                    Console.WriteLine("O preenchimento é obrigatório");
-                    Console.WriteLine("Sexo: (F) Fêmea (M) Macho");
-                    cao.Sexo = Console.ReadLine();
-                    ValidarEmBranco(cao);
-                }
-                //if (cao.Idade.ToString(""))
-                //{
-                //    cao.Idade.ToString("Não informado");
-                //}
                 if (cao.Castrado == "")
                 {
                     cao.Castrado = "Não informado";

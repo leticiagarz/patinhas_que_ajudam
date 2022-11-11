@@ -1,0 +1,185 @@
+<html> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+#titulo {
+    font-family: sans-serif;
+    color: rgb(185, 48, 75);
+} 
+
+#subtitulo {
+    font-family: sans-serif;
+    color: rgb(185, 48, 75);
+} 
+
+#check{
+    display: inline-block;
+}
+
+fieldset {
+    border: 0;
+}
+
+body{
+    background-color: #F0F8FF;
+    font-family: sans-serif;
+    font-size: 1em;
+    color: rgb(228, 17, 115);
+    margin-left: 40%;
+    margin-top: 10%;
+    justify-content: center;
+}
+
+input, select, textarea, button {
+    font-family: sans-serif;
+    font-size: 1em;
+    color:rgb(228, 17, 115);
+    border-radius: 5px;
+}
+
+.grupo:before, .grupo:after {
+    display: table;
+}
+
+.grupo:after {
+    clear: both;
+}
+
+.campo {
+    margin-bottom: 1em;
+}
+
+.campo label {
+    margin-bottom: 0.2em;
+    color:rgb(228, 17, 115);
+    display: block;
+}
+
+fieldset.grupo .campo {
+    float:  left;
+    margin-right: 1em;
+}
+
+.campo input[type="text"], .campo select, .campo textarea {
+    padding: 0.2em;
+    border: 1px solid rgb(228, 17, 115);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    display: block;
+}
+.campo input[type="number"] {
+    padding: 0.2em;
+    border: 1px solid rgb(228, 17, 115);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    display: block;
+    width: 3em;
+}
+
+.campo select option {
+    padding-right: 1em;
+}
+
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    background: #E0E0F8;
+}
+
+.botao {
+    font-size: 1.2em;
+    background: rgb(228, 17, 115);
+    border: 0;
+    margin-bottom: 1em;
+    color: #ffffff;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.botao, select{
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="titulo">Envio de cães</h1>
+        <p id="subtitulo">Complete com as informações do cachorro encontrado</p>
+        <br>
+    </div>
+
+    <form>
+
+        <fieldset class="grupo">
+            <div class="campo">
+                <label for="nome"><strong>Nome</strong></label>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+
+            <div class="campo">
+                <label for="idade"><strong>Idade</strong></label>
+                <input type="number" name="idade" id="idade">
+            </div>
+        </fieldset> 
+
+        <fieldset class = "grupo">
+        <div class="campo">
+            <label><strong>Porte</strong></label>
+            <label>
+                <input type="radio" name="tamanho" value="P" checked>P
+            </label>
+            <label>
+                <input type="radio" name="tamanho" value="M">M
+            </label>
+            <label>
+                <input type="radio" name="tamanho" value="G">G
+            </label>
+        </div>
+
+        <div class="campo">
+            <label for="arrivedate"><strong>Entrega</strong></label>
+            <input type="date" name="arrivedate" id="arrivedate" required>
+        </div>
+        </fieldset>
+
+        <fieldset class="grupo">
+            <div class="campo">
+                <label for="Sexo"><strong>Sexo</strong></label>
+                <label>
+                    <input type="radio" name="Sexo" value="F" checked >Fêmea
+                </label>
+                <label>
+                    <input type="radio" name="Sexo" value="M" checked >Macho
+                </label>
+            </div>
+            <div class="campo">
+                <label for="Castracao"><strong>Castração</strong></label>
+                <label>
+                    <input type="radio" name="Castracao" value="Sim" checked>Sim
+                </label>
+                <label>
+                    <input type="radio" name="Castracao" value="Não" checked>Não
+                </label>
+                <label>
+                    <input type="radio" name="Castracao" value="Não sei" checked>Não Sei
+                </label>
+            </div>
+        </fieldset>
+        
+        <button class="botao" type="submit" onsubmit="">Concluído</button>            
+
+    </form>
+
+</body>
+</html> 

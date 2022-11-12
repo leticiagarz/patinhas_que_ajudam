@@ -45,36 +45,8 @@
                 color: whitesmoke;
             }
         </style>
-        <script>
+
             
-            /*const inputUser = document.getElementById("input-user");
-            const inputPassword = document.getElementById("input-password");
-            const inputButton = document.getElementById("input-button");
-            const paragrafoStatus = document.getElementById("");
-
-            const comunicarBackend = async function() {
-                const req = await fetch ('')
-            }
-            */
-
-            function validate(){
-            let username = document.getElementById("input-user").value;
-            let password = document.getElementById("input-password").value;
-    
-            if(username == "admin" && password == "user"){
-            alert("ok");
-            window.location.href = "MenuAdmin.html";
-            return false;
-            }
-            else{
-            alert("amaro");
-            }
-             }
-            function myFunction() { 
-    document.getElementById("cardContainer").style.display="none"; 
-    document.getElementById("secondCardContainer").style.display="block"; 
-            }
-        </script>
     </head>
 <body>
     <h1 id="title">Patinhas Que Ajudam</h1>
@@ -83,8 +55,8 @@
         <div class ="card">
             <div class="container">
         <h4>Selecione um menu:</h4>
-        <p><input type="submit" value="Menu Usuario" onclick="location.href = 'MenuUsuario.html';"></p>
-        <p><input type="submit" value="Menu Admin" onclick="myFunction()"></p>
+        <p><input type="button" value="Usuario" onclick="location.href = 'MenuUsuario.html';"></p>
+        <p><input type="button" id="menuAdmin" value="Administrador" onclick="myFunction()"></p>
             </div>
         </div>
     </div>
@@ -95,10 +67,34 @@
                 <h3>Login</h3>
                 <input id="input-user" type="text" name="username" placeholder="Usuário">
                 <input id="input-password" type="password" name="password" placeholder="Senha">
-                <input id="input-button" type="submit" value="Entrar" onclick="validate()">
+                <input id="input-button" type="button" value="Entrar">
             </form>
             </div>
         </div>
     </div>
+
+    <script>
+         const inputbutton = document.getElementById("input-button");
+        const username = document.getElementById("input-user");
+        const password = document.getElementById("input-password");
+
+        const autenticar = function()
+        {
+           
+            if(username.value == "user" && password.value == "user"){
+                window.location.href = "MenuAdmin.html";
+            }
+            else{
+                alert('errouuu');
+            }
+        }
+
+        inputbutton.addEventListener('click', () => autenticar())
+        
+            function myFunction() { 
+    document.getElementById("cardContainer").style.display="none"; 
+    document.getElementById("secondCardContainer").style.display="block"; 
+            }
+        </script>
 </body>
 </html>

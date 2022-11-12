@@ -3,8 +3,8 @@ namespace menu_doacao_doguinhos
 {
     public class MenuAdmin
     {
-        public int Usuario { get; set; } = 1234;
-        public int Senha { get; set; } = 1234;
+        public int Usuario { get; set; } = 0000;
+        public int Senha { get; set; } = 1001;
         public void OpcaoLoginAdmin(FuncoesEvalidacoes funcoesEValidacoes)
         {
             bool loopingLoginAdmin = true;

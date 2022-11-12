@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem</title>
+    <title>Formulário de Envio</title>
     <style>
         * {
     margin: 0;
@@ -177,9 +177,22 @@ fieldset.grupo .campo {
             </div>
         </fieldset>
         
-        <button class="botao" type="submit" onsubmit="">Concluído</button>            
+        <div class="buttondisapper" >
+        <button class="botao" type="button" onclick="myFunction()">Concluído</button>
+        </div>
+
+       <div class="buttonapper" style="display:none;">
+        <p>Cão cadastrado</p>
+        <button class="botao" type="submit" onsubmit="">Concluído</button>    
+    </div>        
 
     </form>
+    <script>
+         function myFunction() { 
+    document.getElementById("butttondisapper").style.display="none"; 
+    document.getElementById("buttonapper").style.display="block"; 
+            }
+    </script>
 
 </body>
-</html> 
+</html>

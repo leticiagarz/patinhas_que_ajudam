@@ -21,7 +21,7 @@ namespace menu_doacao_doguinhos
             Console.WriteLine("* Nome: ");
             cao.Nome = Console.ReadLine();
             ValidarInputNome(cao);
-            
+
             Console.WriteLine("Idade: ");
             ValidarInputIdade(cao);
 
@@ -32,11 +32,11 @@ namespace menu_doacao_doguinhos
             Console.WriteLine("* Sexo: (F) Fêmea (M) Macho");
             cao.Sexo = Console.ReadLine();
             ValidarInputSexo(cao);
-            
+
             Console.WriteLine("Castrado: (S) Sim (N) Não");
             cao.Castrado = Console.ReadLine();
             ValidarInputCastrado(cao);
-            
+
             Console.WriteLine("Data de entrega: ");
             ValidarInputEntrega(cao);
 
@@ -51,7 +51,7 @@ namespace menu_doacao_doguinhos
         }
         public void VerListagem()
         {
-            if (Caes.Count > 0)
+            if (Caes.Any())
             {
                 foreach (var item in Caes)
                 {
@@ -65,109 +65,137 @@ namespace menu_doacao_doguinhos
         }
         public void Adotar()
         {
-            Console.WriteLine("Digite o código do cão que você deseja adotar: ");
-            int caoASerAdotado = int.Parse(Console.ReadLine());
-            var caoDisponivel = Caes.Where(x => x.Status == "Disponível");
-            var adotarCao = Caes.Where(x => x.Id == caoASerAdotado);
-            Console.Clear();
-
-            if (adotarCao != null && adotarCao.Any() && caoDisponivel.Any())
+            if (Caes.Any())
             {
-                foreach (var item in adotarCao)
+                Console.WriteLine("Digite o código do cão que você deseja adotar: ");
+                int caoASerAdotado = int.Parse(Console.ReadLine());
+                var caoDisponivel = Caes.Where(x => x.Status == "Disponível");
+                var adotarCao = Caes.Where(x => x.Id == caoASerAdotado);
+                Console.Clear();
+
+                if (adotarCao != null && adotarCao.Any() && caoDisponivel.Any())
                 {
-                    item.Status = "Em processo de adoção";
+                    foreach (var item in adotarCao)
+                    {
+                        item.Status = "Em processo de adoção";
+                    }
+                    Console.WriteLine("Dirija-se ao canil para completar a adoção");
                 }
-                Console.WriteLine("Dirija-se ao canil para completar a adoção");
+                else
+                {
+                    Console.WriteLine("Não encontrado");
+                }
             }
             else
             {
-                Console.WriteLine("Não encontrado");
+                Console.WriteLine("Não há cães cadastrados");
             }
         }
         public void Pesquisar()
         {
-            Console.WriteLine("Pesquise aqui: ");
-            var str = Console.ReadLine();
-            str = str.First().ToString().ToUpper() + str.Substring(1);
-            var pesquisas = Caes.Where(x => x.Id.ToString() == str || x.Nome == str || x.Porte == str || x.Sexo == str || x.Status == str || x.Entrega.ToString("dd/MM/yyyy") == str).ToList();
-            Console.Clear();
-
-            if (pesquisas != null && pesquisas.Any())
+            if (Caes.Any())
             {
-                foreach (var item in pesquisas)
+                Console.WriteLine("Pesquise aqui: ");
+                var str = Console.ReadLine();
+                str = str.First().ToString().ToUpper() + str.Substring(1);
+                var pesquisas = Caes.Where(x => x.Id.ToString() == str || x.Nome == str || x.Porte == str || x.Sexo == str || x.Status == str || x.Entrega.ToString("dd/MM/yyyy") == str).ToList();
+                Console.Clear();
+
+                if (pesquisas != null && pesquisas.Any())
                 {
-                    item.Listagem();
+                    foreach (var item in pesquisas)
+                    {
+                        item.Listagem();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Não encontrado");
                 }
             }
             else
             {
-                Console.WriteLine("Não encontrado");
+                Console.WriteLine("Não há cães cadastrados");
             }
         }
         public void AlterarStatus()
         {
-            Console.WriteLine("Digite o código do cão que você deseja alterar status: ");
-            int caoATerStatusAlterado = int.Parse(Console.ReadLine());
-            Console.Clear();
-            Console.WriteLine("(1) À caminho (2) Disponível (3) Em processo de adoção (4) Adotado");
-            int statusASerDefinido = int.Parse(Console.ReadLine());
-            var alterarStatus = Caes.Where(x => x.Id == caoATerStatusAlterado);
-            Console.Clear();
-
-            var statusACaminho = "À caminho";
-            var statusDisponivel = "Disponível";
-            var statusEmProcessoDeAdocao = "Em processo de adoção";
-            var statusAdotado = "Adotado";
-
-            if (alterarStatus != null && alterarStatus.Any())
+            if (Caes.Any())
             {
-                foreach (var item in alterarStatus)
+                Console.WriteLine("Digite o código do cão que você deseja alterar status: ");
+                int caoATerStatusAlterado = int.Parse(Console.ReadLine());
+                Console.Clear();
+                var alterarStatus = Caes.Where(x => x.Id == caoATerStatusAlterado);
+
+                if (alterarStatus != null && alterarStatus.Any())
                 {
-                    if (statusASerDefinido == 1)
+                    Console.WriteLine("(1) À caminho (2) Disponível (3) Em processo de adoção (4) Adotado");
+                    int statusASerDefinido = int.Parse(Console.ReadLine());
+                    Console.Clear();
+
+                    var statusACaminho = "À caminho";
+                    var statusDisponivel = "Disponível";
+                    var statusEmProcessoDeAdocao = "Em processo de adoção";
+                    var statusAdotado = "Adotado";
+
+                    foreach (var item in alterarStatus)
                     {
-                        item.Status = statusACaminho;
-                    }
-                    else if (statusASerDefinido == 2)
-                    {
-                        item.Status = statusDisponivel;
-                    }
-                    else if (statusASerDefinido == 3)
-                    {
-                        item.Status = statusEmProcessoDeAdocao;
-                    }
-                    else
-                    {
-                        item.Status = statusAdotado;
+                        if (statusASerDefinido == 1)
+                        {
+                            item.Status = statusACaminho;
+                        }
+                        else if (statusASerDefinido == 2)
+                        {
+                            item.Status = statusDisponivel;
+                        }
+                        else if (statusASerDefinido == 3)
+                        {
+                            item.Status = statusEmProcessoDeAdocao;
+                        }
+                        else
+                        {
+                            item.Status = statusAdotado;
+                        }
                     }
                     Console.WriteLine("Status alterado");
                 }
+                else
+                {
+                    Console.WriteLine("Não encontrado");
+                }
             }
             else
             {
-                Console.WriteLine("Não encontrado");
+                Console.WriteLine("Não há cães cadastrados");
             }
-            Console.Clear();
         }
         public void ExcluirCao()
         {
-            Console.WriteLine("Digite o código do cão que você deseja excluir: ");
-            int caoASerExcluido = int.Parse(Console.ReadLine());
-            Console.Clear();
-            var excluirCao = Caes.Where(x => x.Id == caoASerExcluido);
-            Console.Clear();
-
-            if (excluirCao != null && excluirCao.Any())
+            if (Caes.Any())
             {
-                foreach (var item in excluirCao)
+                Console.WriteLine("Digite o código do cão que você deseja excluir: ");
+                int caoASerExcluido = int.Parse(Console.ReadLine());
+                Console.Clear();
+                var excluirCao = Caes.Where(x => x.Id == caoASerExcluido);
+                Console.Clear();
+
+                if (excluirCao != null && excluirCao.Any())
                 {
-                    Caes.Remove(item);
-                    break;
+                    foreach (var item in excluirCao)
+                    {
+                        Caes.Remove(item);
+                        break;
+                    }
+                    Console.WriteLine("Cão excluído");
                 }
-                Console.WriteLine("Cão excluído");
+                else
+                {
+                    Console.WriteLine("Não encontrado");
+                }
             }
             else
             {
-                Console.WriteLine("Não encontrado");
+                Console.WriteLine("Não há cães cadastrados");
             }
         }
         public void ValidarInputNome(Cao cao)
@@ -184,6 +212,7 @@ namespace menu_doacao_doguinhos
         {
             var idade = Console.ReadLine();
             var conseguiuConverter = int.TryParse(idade, out var result);
+
             if (!conseguiuConverter)
             {
                 cao.Idade = 0;

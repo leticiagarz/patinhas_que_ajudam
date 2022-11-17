@@ -2,7 +2,6 @@
 {
     public class MenuUsuario
     {
-
         public void OpcaoMenuUsuario(FuncoesEvalidacoes funcoesEValidacoes)
         {
             bool loopingMenuUsuario = true;

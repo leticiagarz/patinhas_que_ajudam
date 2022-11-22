@@ -37,7 +37,8 @@ namespace menu_doacao_doguinhos
             cao.Castrado = Console.ReadLine();
             ValidarInputCastrado(cao);
 
-            Console.WriteLine("Data de entrega: ");
+            Console.WriteLine("Data de entrega:");
+            Console.WriteLine("Selecione ENTER para a data de hoje ou digite no formato dd/mm/aaaa");
             ValidarInputEntrega(cao);
 
             cao.Status = "À caminho";
@@ -69,11 +70,10 @@ namespace menu_doacao_doguinhos
             {
                 Console.WriteLine("Digite o código do cão que você deseja adotar: ");
                 int caoASerAdotado = int.Parse(Console.ReadLine());
-                var caoDisponivel = Caes.Where(x => x.Status == "Disponível");
-                var adotarCao = Caes.Where(x => x.Id == caoASerAdotado);
+                var adotarCao = Caes.Where(x => x.Id == caoASerAdotado && x.Status == "Disponível");
                 Console.Clear();
 
-                if (adotarCao != null && adotarCao.Any() && caoDisponivel.Any())
+                if (adotarCao != null && adotarCao.Any())
                 {
                     foreach (var item in adotarCao)
                     {
@@ -83,7 +83,7 @@ namespace menu_doacao_doguinhos
                 }
                 else
                 {
-                    Console.WriteLine("Não encontrado");
+                    Console.WriteLine("Não encontrado ou indisponível para adoção");
                 }
             }
             else
@@ -95,7 +95,7 @@ namespace menu_doacao_doguinhos
         {
             if (Caes.Any())
             {
-                Console.WriteLine("Pesquise aqui: ");
+                Console.WriteLine("Pesquise aqui através do ID, nome, porte, sexo, status ou data de entrega do cão: ");
                 var str = Console.ReadLine();
                 str = str.First().ToString().ToUpper() + str.Substring(1);
                 var pesquisas = Caes.Where(x => x.Id.ToString() == str || x.Nome == str || x.Porte == str || x.Sexo == str || x.Status == str || x.Entrega.ToString("dd/MM/yyyy") == str).ToList();

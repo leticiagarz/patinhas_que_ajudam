@@ -22,5 +22,4 @@ while (loopingMenuPrincipal)
             Console.WriteLine("Opcão inválida");
             break;
     }
-}
-    
+} 

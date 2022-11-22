@@ -68,22 +68,31 @@ namespace menu_doacao_doguinhos
         {
             if (Caes.Any())
             {
-                Console.WriteLine("Digite o código do cão que você deseja adotar: ");
-                int caoASerAdotado = int.Parse(Console.ReadLine());
-                var adotarCao = Caes.Where(x => x.Id == caoASerAdotado && x.Status == "Disponível");
-                Console.Clear();
+                var caesDisponiveis = Caes.Where(x => x.Status == "Disponível");
 
-                if (adotarCao != null && adotarCao.Any())
+                if (caesDisponiveis.Any())
                 {
-                    foreach (var item in adotarCao)
+                    Console.WriteLine("Digite o código do cão que você deseja adotar: ");
+                    int caoASerAdotado = int.Parse(Console.ReadLine());
+                    var adotarCao = Caes.Where(x => x.Id == caoASerAdotado && x.Status == "Disponível");
+                    Console.Clear();
+
+                    if (adotarCao != null && adotarCao.Any())
                     {
-                        item.Status = "Em processo de adoção";
+                        foreach (var item in adotarCao)
+                        {
+                            item.Status = "Em processo de adoção";
+                        }
+                        Console.WriteLine("Dirija-se ao canil para completar a adoção");
                     }
-                    Console.WriteLine("Dirija-se ao canil para completar a adoção");
+                    else
+                    {
+                        Console.WriteLine("Não encontrado ou indisponível para adoção");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Não encontrado ou indisponível para adoção");
+                    Console.WriteLine("Não há cães disponíveis");
                 }
             }
             else
@@ -98,7 +107,8 @@ namespace menu_doacao_doguinhos
                 Console.WriteLine("Pesquise aqui através do ID, nome, porte, sexo, status ou data de entrega do cão: ");
                 var str = Console.ReadLine();
                 str = str.First().ToString().ToUpper() + str.Substring(1);
-                var pesquisas = Caes.Where(x => x.Id.ToString() == str || x.Nome == str || x.Porte == str || x.Sexo == str || x.Status == str || x.Entrega.ToString("dd/MM/yyyy") == str).ToList();
+                var pesquisas = Caes.Where(x => x.Id.ToString() == str || x.Nome == str || x.Porte == str ||
+                x.Sexo == str || x.Status == str || x.Entrega.ToString("dd/MM/yyyy") == str).ToList();
                 Console.Clear();
 
                 if (pesquisas != null && pesquisas.Any())

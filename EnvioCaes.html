@@ -110,19 +110,22 @@
             height: 100vh;
             justify-content: center;
             align-items: center;
-            padding: 10px 350px;
             background-color: #bb9a6f;
+            display: flex;
+
+            flex-direction: column;
         }
 
         .container {
-            max-width: 750px;
-            width: 300%;
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 40%;
             background-color: #fff;
             padding: 60px 30px;
             border-radius: 5px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
             font-size: 16px;
-            margin-left: 220px;
+            display: flex;
         }
 
         .content form .user-details {
@@ -159,12 +162,11 @@
         .user-details .input-box-number input {
             margin-top: -7px;
             height: 46px;
-            width: 23%;
+            width: 70%;
             text-align: center;
             outline: none;
             font-size: 16px;
             border-radius: 7px;
-            padding-left: 10px;
             border: 1px solid #ecdec9;
             border-bottom-width: 2px;
             transition: all 0.3s ease;
@@ -246,6 +248,7 @@
         @media(max-width: 584px) {
             .container {
                 max-width: 100%;
+                flex-direction: column;
             }
 
             form .user-details .input-box {

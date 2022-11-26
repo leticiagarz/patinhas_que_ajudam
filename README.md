@@ -11,6 +11,14 @@ Projeto criado com o objetivo de aplicar as competências adquiridas no decorrer
 <img width=40px height=40px src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" /> <img width=40px height=40px src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" /> <img width=40px height=40px src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" /> <img width=40px height=40px src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 
 # Participantes
-<img href="https://github.com/leticiagarz" width=50px height=50px src="https://avatars.githubusercontent.com/u/110684443?v=4" alt="Letícia Garz" />
+[Letícia](https://github.com/leticiagarz)      [Cecília](https://github.com/silvaceciliaa)
+
+<img width=50px height=50px src="https://avatars.githubusercontent.com/u/110684443?v=4" alt="Letícia Garz" /> <img width=50px height=50px src="https://avatars.githubusercontent.com/u/103593379?v=4" alt="Cecília" />
+
+
+
+
+
+
 
 

@@ -14,7 +14,8 @@ Projeto criado com o objetivo de aplicar as competências adquiridas no decorrer
 # <h2>Participantes</h2>
 
 <a href="https://github.com/leticiagarz">Letícia</a> <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> <a href="https://github.com/silvaceciliaa">Cecília</a><br>
-<img width=200px height=200px src="https://images2.imgbox.com/01/f4/VjOrxEa4_o.png" alt="Letícia" /> <img width=200px height=200px src="https://images2.imgbox.com/e3/c7/Vu66ZQM8_o.png" alt="Cecília" />
+
+<a href="https://github.com/leticiagarz"> <img width=200px height=200px src="https://images2.imgbox.com/01/f4/VjOrxEa4_o.png" alt="Letícia"> </a> <a href="https://github.com/silvaceciliaa"> <img width=200px height=200px src="https://images2.imgbox.com/e3/c7/Vu66ZQM8_o.png" alt="Cecília"> </a>
 
 
 

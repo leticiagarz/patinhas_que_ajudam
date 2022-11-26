@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> 
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Admin</title>   <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #bb9a6f;
+        }
+        h1{
+            text-align: center;
+            }
+        nav{
+            position: fixed;
+            height: 122px;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            background-color: #ecdec9;
+            padding: 15px 10px;
+            border-radius: 30px;
+        }
+        nav ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: column;
+        }
+        nav ul li{
+            width: 100%;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color:#3e2d1e;
+            display: flex;
+            align-items: center ;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s all ease;
+        }
+        nav ul li a svg {
+            width: 30px;
+            height: 60px;
+        }
+        nav ul li a svg path {
+            transition: 0.2s all ease;
+        }
+        nav ul li a span {
+            position: absolute;
+            background-color: #fefefe;
+            font-family: sans-serif;
+            padding: 2px 15px;
+            border-radius: 30px;
+            margin-left: 20px;
+            font-weight: 500;
+            font-size: 15px;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.2s all ease;
+        }
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: #522448;
+        }
+        nav ul li a.active span,
+        nav ul li a:hover span {
+            opacity: 1;
+            visibility: visible;
+            margin-left: 50px;
+        }
+        nav.active ul li a span {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            margin-left: 0;
+        }
+        nav.active ul li a:hover span {
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patinhas Que Ajudam</h1>
+    <nav>
+        <ul>
+            <li>
+        <a href="">
+            <svg viewBox="1 0 23 23" width= "23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.364 13.1214C15.2876 14.045 15.4831 15.4211 14.9504 16.5362L16.4853 18.0711C16.8758 18.4616 16.8758 19.0948 16.4853 19.4853C16.0948 19.8758 15.4616 19.8758 15.0711 19.4853L13.5361 17.9504C12.421 18.4831 11.045 18.2876 10.1213 17.364C8.94975 16.1924 8.94975 14.2929 10.1213 13.1214C11.2929 11.9498 13.1924 11.9498 14.364 13.1214ZM12.9497 15.9498C13.3403 15.5593 13.3403 14.9261 12.9497 14.5356C12.5592 14.145 11.9261 14.145 11.5355 14.5356C11.145 14.9261 11.145 15.5593 11.5355 15.9498C11.9261 16.3403 12.5592 16.3403 12.9497 15.9498Z" fill="currentColor"/><path d="M8 5H16V7H8V5Z" fill="currentColor" /><path d="M16 9H8V11H16V9Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C4 2.34315 5.34315 1 7 1H17C18.6569 1 20 2.34315 20 4V20C20 21.6569 18.6569 23 17 23H7C5.34315 23 4 21.6569 4 20V4ZM7 3H17C17.5523 3 18 3.44772 18 4V20C18 20.5523 17.5523 21 17 21H7C6.44772 21 6 20.5523 6 20V4C6 3.44772 6.44771 3 7 3Z" fill="currentColor"/></svg>
+            <span>Ver Listagem</span>
+        </a>
+        <a href="Patinhas que ajudam.html">
+            <svg  viewBox="1 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9481 14.8285L10.5339 16.2427L6.29122 12L10.5339 7.7574L11.9481 9.17161L10.1196 11H17.6568V13H10.1196L11.9481 14.8285Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.22183 19.7782C-0.0739419 15.4824 -0.0739419 8.51759 4.22183 4.22183C8.51759 -0.0739419 15.4824 -0.0739419 19.7782 4.22183C24.0739 8.51759 24.0739 15.4824 19.7782 19.7782C15.4824 24.0739 8.51759 24.0739 4.22183 19.7782ZM5.63604 18.364C2.12132 14.8492 2.12132 9.15076 5.63604 5.63604C9.15076 2.12132 14.8492 2.12132 18.364 5.63604C21.8787 9.15076 21.8787 14.8492 18.364 18.364C14.8492 21.8787 9.15076 21.8787 5.63604 18.364Z" fill="currentColor"/></svg>
+            <span>Sair</span>
+        </a>
+        </ul>
+    </nav>
+    <script>
+        </script>
+</body>
+</html>

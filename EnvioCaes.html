@@ -27,9 +27,10 @@
         }
 
         #subtitle {
-           
+
             text-align: center;
         }
+
         nav {
             position: fixed;
             height: 325px;
@@ -68,9 +69,11 @@
             width: 30px;
             height: 60px;
         }
+
         nav ul li a svg path {
             transition: 0.2s all ease;
         }
+
         nav ul li a span {
             position: absolute;
             background-color: #ecdec9;
@@ -84,7 +87,9 @@
             opacity: 0;
             transition: 0.2s all ease;
         }
-        nav ul li a.active span, nav ul li a:hover span {
+
+        nav ul li a.active span,
+        nav ul li a:hover span {
             opacity: 1;
             visibility: visible;
             margin-left: 50px;
@@ -111,6 +116,25 @@
             flex-direction: column;
         }
 
+        .card {
+            background-color: white;
+            text-align: center;
+            box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            border-radius: 10px;
+            width: 23%;
+            margin: 0 auto;
+            margin-top: 90px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .usercontainer {
+            padding: 10px 6px;
+        }
+
         .container {
             margin: 0 auto;
             margin-top: 20px;
@@ -121,6 +145,7 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
             font-size: 16px;
             display: flex;
+            margin-bottom: 20px;
         }
 
         .content form .user-details {
@@ -154,6 +179,7 @@
             border-bottom-width: 2px;
             transition: all 0.3s ease;
         }
+
         .user-details .input-box-number input {
             margin-top: -7px;
             height: 46px;
@@ -166,7 +192,8 @@
             border-bottom-width: 2px;
             transition: all 0.3s ease;
         }
-        .details-age{
+
+        .details-age {
             display: flex;
             justify-content: space-between;
             margin-top: -40px;
@@ -179,6 +206,7 @@
         .user-details .input-box input:focus {
             border-color: #3e2d1e;
         }
+
         .user-details .input-box-number input:focus {
             border-color: #3e2d1e;
         }
@@ -194,7 +222,7 @@
             align-items: center;
             padding-left: 3%;
             cursor: pointer;
-            
+
         }
 
         form .category label .dot {
@@ -202,7 +230,7 @@
             width: 18px;
             border-radius: 50%;
             margin-right: 5px;
-            background:#ecdec9;
+            background: #ecdec9;
             border: 3px solid transparent;
             transition: all 0.3s ease;
         }
@@ -224,7 +252,7 @@
             justify-content: space-between;
         }
 
-        input[type = "submit"]{
+        #envioCaes {
             height: 70px;
             width: 100%;
             border-radius: 7px;
@@ -236,8 +264,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             background: #3e2d1e;
-            }
-        
+        }
+
 
         @media(max-width: 584px) {
             .container {
@@ -269,12 +297,29 @@
                 flex-direction: column;
             }
         }
+        .input-button-form{
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: #3e2d1e;
+            color: whitesmoke;
+            border-radius: 8px;
+            outline: none;
+            border-color: #3e2d1e;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 
 <body>
     <h1 id="title">Envio de cães</h1>
-    <p id="subtitle">Complete com as informações do cão encontrado</p>
+    <p id="subtitle">Complete com as informações do cão encontrado e depois as suas</p>
     <nav>
         <ul>
             <li>
@@ -313,7 +358,12 @@
             <li>
                 <a href="Patinhas que ajudam.html">
                     <svg viewBox="1 0 24 24" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.51428 20H4.51428C3.40971 20 2.51428 19.1046 2.51428 18V6C2.51428 4.89543 3.40971 4 4.51428 4H8.51428V6H4.51428V18H8.51428V20Z" fill="currentColor"/><path d="M13.8418 17.385L15.262 15.9768L11.3428 12.0242L20.4857 12.0242C21.038 12.0242 21.4857 11.5765 21.4857 11.0242C21.4857 10.4719 21.038 10.0242 20.4857 10.0242L11.3236 10.0242L15.304 6.0774L13.8958 4.6572L7.5049 10.9941L13.8418 17.385Z" fill="currentColor"/>
+                        <path
+                            d="M8.51428 20H4.51428C3.40971 20 2.51428 19.1046 2.51428 18V6C2.51428 4.89543 3.40971 4 4.51428 4H8.51428V6H4.51428V18H8.51428V20Z"
+                            fill="currentColor" />
+                        <path
+                            d="M13.8418 17.385L15.262 15.9768L11.3428 12.0242L20.4857 12.0242C21.038 12.0242 21.4857 11.5765 21.4857 11.0242C21.4857 10.4719 21.038 10.0242 20.4857 10.0242L11.3236 10.0242L15.304 6.0774L13.8958 4.6572L7.5049 10.9941L13.8418 17.385Z"
+                            fill="currentColor" />
                     </svg>
                     <span>Sair</span>
                 </a>
@@ -337,10 +387,12 @@
         </ul>
     </nav>
 
-    <div class="container">
+    <div class="container" id="containerform">
         <div class="content">
             <form action="#">
                 <p>*Campos Obrigatórios</p>
+
+                <p>Etapa 1</p>
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Nome*</span>
@@ -351,7 +403,7 @@
                         <input type="number">
                     </div>
                     <div class="input-box">
-                    <span class="details">Porte*</span>
+                        <span class="details">Porte*</span>
                         <input type="radio" name="size" id="dot-1">
                         <input type="radio" name="size" id="dot-2">
                         <input type="radio" name="size" id="dot-3">
@@ -376,47 +428,70 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Sexo*</span>
-                                <input type="radio" name="Sexo" id="dot-4">
-                                <input type="radio" name="Sexo" id="dot-5">
-                                <div class="category">
-                                    <label for="dot-4">
-                                        <span class="dot four"></span>
-                                        <span>Fêmea</span>
-                                    </label>
-                                    <label for="dot-5">
-                                        <span class="dot five"></span>
-                                        <span>Macho</span>
-                                    </label>
-                                </div>
+                        <input type="radio" name="Sexo" id="dot-4">
+                        <input type="radio" name="Sexo" id="dot-5">
+                        <div class="category">
+                            <label for="dot-4">
+                                <span class="dot four"></span>
+                                <span>Fêmea</span>
+                            </label>
+                            <label for="dot-5">
+                                <span class="dot five"></span>
+                                <span>Macho</span>
+                            </label>
+                        </div>
                     </div>
-                
-                <div class="input-box">
-                <span class="details">O cão é castrado?</span>
-                    <input type="radio" name="castracao" id="dot-6">
-                    <input type="radio" name="castracao" id="dot-7">
-                    <input type="radio" name="castracao" id="dot-8">
-                    <div class="category">
-                        <label for="dot-6">
-                            <span class="dot six"></span>
-                            <span>Sim</span>
-                        </label>
-                        <label for="dot-7">
-                            <span class="dot seven"></span>
-                            <span>Não</span>
-                        </label>
-                        <label for="dot-8">
-                            <span class="dot eight"></span>
-                            <span>Não sei</span>
-                        </label>
+
+                    <div class="input-box">
+                        <span class="details">O cão é castrado?</span>
+                        <input type="radio" name="castracao" id="dot-6">
+                        <input type="radio" name="castracao" id="dot-7">
+                        <input type="radio" name="castracao" id="dot-8">
+                        <div class="category">
+                            <label for="dot-6">
+                                <span class="dot six"></span>
+                                <span>Sim</span>
+                            </label>
+                            <label for="dot-7">
+                                <span class="dot seven"></span>
+                                <span>Não</span>
+                            </label>
+                            <label for="dot-8">
+                                <span class="dot eight"></span>
+                                <span>Não sei</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <p>Etapa 2</p>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Nome*</span>
+                        <input type="text" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email*</span>
+                        <input type="email" required>
+                    </div>
+                </div>
                 <div class="button">
-                    <input type="submit" value="Enviar">
+                    <input type="button" id="envioCaes" value="Enviar" onclick="addFunction()">
                 </div>
             </form>
         </div>
     </div>
+    <div id="addCardContainer" style="display:none;">
+        <form>
+                <h1>Formulário enviado!</h1>
+                <p id="subtitle">Encaminhe o cão para o canil para completar envio.</p>
+                <input class="input-button-form" type="button" value="Enviar novamente" onclick="location.href = 'EnvioCaes.html';">
+            </form>
     </div>
+    <script>
+        function addFunction() {
+            
+            document.getElementById("addCardContainer").style.display = "block";
+        }
+    </script>
 </body>
 </html>

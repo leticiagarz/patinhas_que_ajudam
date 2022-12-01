@@ -1,31 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Usuario</title>
     <style>
-       * {
+        * {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            align-items: center;
         }
-        body {
-            background-color: #bb9a6f;
+
+        /*===== VARIABLES CSS =====*/
+        :root {
+            /*===== Colores =====*/
+            --first-color: #F2A20C;
+            --white-color: #E9EAEC;
+            --dark-color: #272D40;
+            --dark-color-lighten: #3e2d1e;
+            /*===== Fuente y tipografia =====*/
+            --h1-font-size: 1.5rem;
+            --h2-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: 1rem;
         }
-        h1{
-            text-align: center;
+
+        /*===== BASE =====*/
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+        }
+
+        #title {
             color: #ecdec9;
-            }
-        nav{
+            text-align: center;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: var(--normal-font-size);
+            background-color: #bb9a6f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1,
+        p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        nav {
             position: fixed;
-            height: 242px;
+            height: 269px;
             left: 20px;
             top: 0;
             bottom: 0;
@@ -34,44 +73,51 @@
             padding: 15px 10px;
             border-radius: 30px;
         }
-        nav ul{
+
+        nav ul {
             list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-flow: column;
         }
-        nav ul li{
+
+        nav ul li {
             width: 100%;
         }
+
         nav ul li a {
             text-decoration: none;
             color: #3e2d1e;
             display: flex;
-            align-items: center ;
+            align-items: center;
             cursor: pointer;
             width: 100%;
             transition: 0.2s all ease;
         }
+
         nav ul li a div {
             text-decoration: none;
             color: #ecdec9;
             display: flex;
-            align-items: center ;
+            align-items: center;
             cursor: pointer;
             width: 100%;
             transition: 0.2s all ease;
         }
+
         nav ul li a svg {
             width: 30px;
             height: 60px;
         }
+
         nav ul li a svg path {
             transition: 0.2s all ease;
         }
+
         nav ul li a span {
             position: absolute;
-            background-color:  #ecdec9;
+            background-color: #ecdec9;
             font-family: sans-serif;
             padding: 2px 15px;
             border-radius: 30px;
@@ -82,54 +128,463 @@
             opacity: 0;
             transition: 0.2s all ease;
         }
+
         nav ul li a.active span,
         nav ul li a:hover span {
             opacity: 1;
             visibility: visible;
             margin-left: 50px;
         }
+
         nav.active ul li a span {
             position: relative;
             opacity: 1;
             visibility: visible;
             margin-left: 0;
         }
+
         nav.active ul li a:hover span {
             margin-left: 0;
         }
+
+        .search-container {
+            padding: 20px;
+        }
+
+        .search-container form {
+            width: 100%;
+            border: 2px solid rgb(63, 36, 4);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: #bb9a6f;
+        }
+
+        .search-container form input {
+            border: none;
+            outline: none;
+            box-shadow: none;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 10px;
+            background-color: #bb9a6f;
+        }
+
+        .container {
+            margin-top: 10px;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 0%;
+        }
+
+        .dog-card {
+            width: 235px;
+            height: 390px;
+            background-color: var(--white-color);
+            border-radius: 1rem;
+            padding: 4rem 2rem 0;
+            color: var(--white-color);
+            overflow-y: hidden;
+            margin-bottom: auto;
+        }
+
+        .card__img {
+            position: absolute;
+            width: 180px;
+        }
+
+        .dog-card-data {
+            transform: translateY(13.2rem);
+            text-align: center;
+        }
+
+        .dog-name {
+            font-size: var(--h1-font-size);
+            color: var(--first-color);
+        }
+
+        .dog-id {
+            font-size: var(--h3-font-size);
+            color: #3e2d1e;
+        }
+
+        .dog-age,
+        .dog-sex {
+            display: inline-block;
+            font-size: var(--h2-font-size);
+            font-weight: 500;
+            color: #272D40;
+        }
+
+        .card__description {
+            font-size: var(--small-font-size);
+            color: #272D40;
+            text-align: initial;
+            margin-bottom: .5rem;
+            opacity: 0;
+        }
+
+        .card__button {
+            display: block;
+            width: max-content;
+            padding: 1.125rem 2rem;
+            background-color: var(--first-color);
+            color: var(--white-color);
+            border-radius: .5rem;
+            font-weight: 500;
+            transition: .2s;
+            opacity: 0;
+        }
+
+        .card__button:hover {
+            box-shadow: 0 18px 40px -12px rgba(242, 162, 12, .35);
+        }
+
+        .card__img,
+        .dog-card-data,
+        .dog-name,
+        .dog-age,
+        .dog-sex,
+        .dog-id,
+        .card__description {
+            transition: .5s;
+        }
+
+        .dog-card:hover .card__img {
+            transform: translate(-.1rem, -9.5rem);
+        }
+
+        .dog-card:hover .dog-card-data {
+            transform: translateY(4.8rem);
+        }
+
+        .dog-card:hover .dog-name {
+            transform: translateX(-.3rem);
+        }
+
+        .dog-card:hover .dog-age {
+            transform: translateX(-2.8rem);
+        }
+
+        .dog-card:hover .dog-sex {
+            transform: translateX(-2.8rem);
+        }
+
+        .dog-card:hover .dog-id {
+            transform: translateX(-2.8rem);
+        }
+
+        .dog-card:hover .card__description,
+        .dog-card:hover .card__button {
+            transition-delay: .2s;
+            opacity: 1;
+        }
+
+        .footer {
+            width: 100vw;
+            display: block;
+            overflow: hidden;
+            padding: 70px 0;
+            box-sizing: border-box;
+            background-color: transparent;
+        }
+
+        .inner-footer {
+            display: block;
+            margin: 0 auto;
+            width: 1100px;
+            height: 100%;
+
+        }
+        .inner-footer .logo-container{
+            width: 72%;
+            float: right;
+            height: 100%;
+            display: block;
+        }
+        .inner-footer .logo-container img{
+           width: 500px;
+           height: auto;
+
+
+        }
     </style>
+
+    <title>Adotar</title>
 </head>
+
 <body>
-    <h1>Patinhas Que Ajudam</h1>
     <nav>
         <ul>
-            <div class="change-colour">
             <li>
-        <a href="">
-            <svg viewBox="1 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.0122 5.57169L10.9252 4.48469C8.77734 2.33681 5.29493 2.33681 3.14705 4.48469C0.999162 6.63258 0.999162 10.115 3.14705 12.2629L11.9859 21.1017L11.9877 21.0999L12.014 21.1262L20.8528 12.2874C23.0007 10.1395 23.0007 6.65711 20.8528 4.50923C18.705 2.36134 15.2226 2.36134 13.0747 4.50923L12.0122 5.57169ZM11.9877 18.2715L16.9239 13.3352L18.3747 11.9342L18.3762 11.9356L19.4386 10.8732C20.8055 9.50635 20.8055 7.29028 19.4386 5.92344C18.0718 4.55661 15.8557 4.55661 14.4889 5.92344L12.0133 8.39904L12.006 8.3918L12.005 8.39287L9.51101 5.89891C8.14417 4.53207 5.92809 4.53207 4.56126 5.89891C3.19442 7.26574 3.19442 9.48182 4.56126 10.8487L7.10068 13.3881L7.10248 13.3863L11.9877 18.2715Z" fill="#bb9a6f"/></svg>
-            <span>Adotar</span>
-        </a>
+                <a href="MenuUsuario.html">
+                    <svg viewBox="1 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.0122 5.57169L10.9252 4.48469C8.77734 2.33681 5.29493 2.33681 3.14705 4.48469C0.999162 6.63258 0.999162 10.115 3.14705 12.2629L11.9859 21.1017L11.9877 21.0999L12.014 21.1262L20.8528 12.2874C23.0007 10.1395 23.0007 6.65711 20.8528 4.50923C18.705 2.36134 15.2226 2.36134 13.0747 4.50923L12.0122 5.57169ZM11.9877 18.2715L16.9239 13.3352L18.3747 11.9342L18.3762 11.9356L19.4386 10.8732C20.8055 9.50635 20.8055 7.29028 19.4386 5.92344C18.0718 4.55661 15.8557 4.55661 14.4889 5.92344L12.0133 8.39904L12.006 8.3918L12.005 8.39287L9.51101 5.89891C8.14417 4.53207 5.92809 4.53207 4.56126 5.89891C3.19442 7.26574 3.19442 9.48182 4.56126 10.8487L7.10068 13.3881L7.10248 13.3863L11.9877 18.2715Z"
+                            fill="#bb9a6f" />
+                    </svg>
+                    <span>Adotar</span>
+                </a>
             </li>
-            </div>
             <li>
-        <a href="EnvioCaes.html">
-            <svg viewBox="1 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.5354 2.87868C16.3638 1.70711 14.4644 1.70711 13.2928 2.87868L11.8786 4.29289C11.8183 4.35317 11.7611 4.41538 11.707 4.47931C11.653 4.41539 11.5958 4.3532 11.5355 4.29293L10.1213 2.87871C8.94975 1.70714 7.05025 1.70714 5.87868 2.87871C4.70711 4.05029 4.70711 5.94978 5.87868 7.12136L6.75732 8H1V14H3V22H21V14H23V8H16.6567L17.5354 7.12132C18.707 5.94975 18.707 4.05025 17.5354 2.87868ZM14.707 7.12132L16.1212 5.70711C16.5117 5.31658 16.5117 4.68342 16.1212 4.29289C15.7307 3.90237 15.0975 3.90237 14.707 4.29289L13.2928 5.70711C12.9023 6.09763 12.9023 6.7308 13.2928 7.12132C13.6833 7.51184 14.3165 7.51184 14.707 7.12132ZM10.1213 5.70714L8.70711 4.29293C8.31658 3.9024 7.68342 3.9024 7.29289 4.29293C6.90237 4.68345 6.90237 5.31662 7.29289 5.70714L8.70711 7.12136C9.09763 7.51188 9.7308 7.51188 10.1213 7.12136C10.5118 6.73083 10.5118 6.09767 10.1213 5.70714ZM21 10V12H3V10H21ZM12.9167 14H19V20H12.9167V14ZM11.0834 14V20H5V14H11.0834Z" fill="currentColor" /></svg>
-            <span>Enviar Cão</span>
-        </a>
-        </li>
-        <li>
-        <a href="Patinhas que ajudam.html">
-            <svg  viewBox="1 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9481 14.8285L10.5339 16.2427L6.29122 12L10.5339 7.7574L11.9481 9.17161L10.1196 11H17.6568V13H10.1196L11.9481 14.8285Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.22183 19.7782C-0.0739419 15.4824 -0.0739419 8.51759 4.22183 4.22183C8.51759 -0.0739419 15.4824 -0.0739419 19.7782 4.22183C24.0739 8.51759 24.0739 15.4824 19.7782 19.7782C15.4824 24.0739 8.51759 24.0739 4.22183 19.7782ZM5.63604 18.364C2.12132 14.8492 2.12132 9.15076 5.63604 5.63604C9.15076 2.12132 14.8492 2.12132 18.364 5.63604C21.8787 9.15076 21.8787 14.8492 18.364 18.364C14.8492 21.8787 9.15076 21.8787 5.63604 18.364Z" fill="currentColor"/></svg>
-            <span>Voltar</span>
-        </a>
+                <a href="EnvioCaes.html">
+                    <svg viewBox="1 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M17.5354 2.87868C16.3638 1.70711 14.4644 1.70711 13.2928 2.87868L11.8786 4.29289C11.8183 4.35317 11.7611 4.41538 11.707 4.47931C11.653 4.41539 11.5958 4.3532 11.5355 4.29293L10.1213 2.87871C8.94975 1.70714 7.05025 1.70714 5.87868 2.87871C4.70711 4.05029 4.70711 5.94978 5.87868 7.12136L6.75732 8H1V14H3V22H21V14H23V8H16.6567L17.5354 7.12132C18.707 5.94975 18.707 4.05025 17.5354 2.87868ZM14.707 7.12132L16.1212 5.70711C16.5117 5.31658 16.5117 4.68342 16.1212 4.29289C15.7307 3.90237 15.0975 3.90237 14.707 4.29289L13.2928 5.70711C12.9023 6.09763 12.9023 6.7308 13.2928 7.12132C13.6833 7.51184 14.3165 7.51184 14.707 7.12132ZM10.1213 5.70714L8.70711 4.29293C8.31658 3.9024 7.68342 3.9024 7.29289 4.29293C6.90237 4.68345 6.90237 5.31662 7.29289 5.70714L8.70711 7.12136C9.09763 7.51188 9.7308 7.51188 10.1213 7.12136C10.5118 6.73083 10.5118 6.09767 10.1213 5.70714ZM21 10V12H3V10H21ZM12.9167 14H19V20H12.9167V14ZM11.0834 14V20H5V14H11.0834Z"
+                            fill="currentColor" />
+                    </svg>
+                    <span>Enviar Cão</span>
+                </a>
+            </li>
+            <li>
+                <a href="Patinhas que ajudam.html">
+                    <svg viewBox="1 0 24 24" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.51428 20H4.51428C3.40971 20 2.51428 19.1046 2.51428 18V6C2.51428 4.89543 3.40971 4 4.51428 4H8.51428V6H4.51428V18H8.51428V20Z" fill="currentColor"/><path d="M13.8418 17.385L15.262 15.9768L11.3428 12.0242L20.4857 12.0242C21.038 12.0242 21.4857 11.5765 21.4857 11.0242C21.4857 10.4719 21.038 10.0242 20.4857 10.0242L11.3236 10.0242L15.304 6.0774L13.8958 4.6572L7.5049 10.9941L13.8418 17.385Z" fill="currentColor"/>
+                    </svg>
+                    <span>Sair</span>
+                </a>
             </li>
             <li>
                 <a href="https://github.com/leticiagarz/doacao-doguinho/blob/master/README.md">
-                    <svg  viewBox="0 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 10.9794C11 10.4271 11.4477 9.97937 12 9.97937C12.5523 9.97937 13 10.4271 13 10.9794V16.9794C13 17.5317 12.5523 17.9794 12 17.9794C11.4477 17.9794 11 17.5317 11 16.9794V10.9794Z" fill="currentColor"/><path d="M12 6.05115C11.4477 6.05115 11 6.49886 11 7.05115C11 7.60343 11.4477 8.05115 12 8.05115C12.5523 8.05115 13 7.60343 13 7.05115C13 6.49886 12.5523 6.05115 12 6.05115Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12Z" fill="currentColor"/></svg>
+                    <svg viewBox="0 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11 10.9794C11 10.4271 11.4477 9.97937 12 9.97937C12.5523 9.97937 13 10.4271 13 10.9794V16.9794C13 17.5317 12.5523 17.9794 12 17.9794C11.4477 17.9794 11 17.5317 11 16.9794V10.9794Z"
+                            fill="currentColor" />
+                        <path
+                            d="M12 6.05115C11.4477 6.05115 11 6.49886 11 7.05115C11 7.60343 11.4477 8.05115 12 8.05115C12.5523 8.05115 13 7.60343 13 7.05115C13 6.49886 12.5523 6.05115 12 6.05115Z"
+                            fill="currentColor" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12Z"
+                            fill="currentColor" />
+                    </svg>
                     <span>Sobre</span>
                 </a>
             </li>
         </ul>
     </nav>
+    <h1 id="title">Adoção de cães</h1>
+    <section class="search-container">
+        <form>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z"
+                    fill="currentColor" />
+            </svg>
+            <input type="text" name="procurar" id="search-dogs" placeholder="Procure por ID" onkeyup="search()">
+        </form>
+    </section>
+
+    <div class="container" id="dogs-to-adopt">
+
+        <div class="dog-card">
+            <img src="data:image/jpeg;base64,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"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Cachacinha</h1>
+                <h3 class="dog-id">ID: 0 </h3>
+                <span class="dog-age">9 anos - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li class="dog-size">Porte: G</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 28/11/2022</li>
+                </ul>
+                <a href="#" class="card__button">Adotar</a>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/8f1b8843f524f284dab7ac98557ba93d/f9a479c32656bd90-35/s250x400/ca3ce76f4588c96146891f43fac6e83dd868e19b.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Pink</h1>
+                <h3 class="dog-id">ID: 1 </h3>
+                <span class="dog-age">13 anos - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li class="dog-size">Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 23/07/2020</li>
+                </ul>
+                <a href="#" class="card__button">Adotar</a>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/926c27e9cf470de818399a3acd383d97/f9a479c32656bd90-99/s250x400/e8eb708a7beae9f6b2d34031966c24311a30c8f4.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Luli</h1>
+                <h3 class="dog-id">ID: 2 </h3>
+                <span class="dog-age"> 1 ano - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li class="dog-size">Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 28/11/2022</li>
+                </ul>
+                <a href="#" class="card__button">Adotar</a>
+            </div>
+        </div>
+
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/e2ba2e5ac623d1d0f6bb79e184bf5417/f9a479c32656bd90-55/s400x600/6b5f8045c477c46431c74fabbc5dc74a2fd6908a.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Pingo</h1>
+                <h3 class="dog-id">ID: 3 </h3>
+                <span class="dog-age">6 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 12/01/2022</li>
+                </ul>
+                <a href="#" class="card__button">Adotar</a>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/d2c7f72fd8c61d8c4b385dd30691c115/dd52d121e53f5738-4f/s500x750/d102cf8b22deedceb7330350ebfd18dc0796aabc.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Jake</h1>
+                <h3 class="dog-id">ID: 4 </h3>
+                <span class="dog-age">6 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: P</li>
+                    <li class="dog-cas">Castração: N</li>
+                    <li clas="dog-entre">Desde: 28/06/2055</li>
+                </ul>
+                <a href="#" class="card__button">Adotar</a>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/1d295d4d6c145380e7afe419a9e2be61/f9a479c32656bd90-0d/s250x400/0f6f3a916c4e88741b79f440ac384a91c712e632.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Scooby</h1>
+                <h3 class="dog-id">ID: 5 </h3>
+                <span class="dog-age">2 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 28/11/2022</li>
+                </ul>
+                <a href="#" class="card__button">Adotar</a>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/983bf9cb8d62ec063a2bf903b41f63eb/f9a479c32656bd90-93/s250x400/340909afd542186917c31c3be040ee54f044afc1.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Luna</h1>
+                <h3 class="dog-id">ID: 6 </h3>
+                <span class="dog-age">6 meses - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li>Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 23/07/2020</li>
+                </ul>
+                <a href="#" class="card__button">Adotar</a>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/0e1463b8bbb1be75bed7a95021d37e94/f9a479c32656bd90-96/s250x400/4047f8439a73854e072dd47db3935ccf1e7c08a2.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Bingo</h1>
+                <h3 class="dog-id">ID: 7 </h3>
+                <span class="dog-age">4 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 23/07/2020</li>
+                </ul>
+                <a href="#" class="card__button">Adotar</a>
+            </div>
+        </div>
+
+        <div id="false-add" style="display:none;">
+            <div class="dog-card">
+                <img src="https://64.media.tumblr.com/a5f898aaa4e51b53ae3bd6c399f7f7c4/78e3808f827b2a8c-b5/s400x600/b4f0652681bd009d5b96c718877377559866a598.jpg"
+                    alt="" class="card__img">
+                <div class="dog-card-data">
+                    <h1 class="dog-name">Katiana</h1>
+                    <h3 class="dog-id">ID: 6 </h3>
+                    <span class="dog-age">7 anos - </span>
+                    <span class="dog-sex">F</span>
+                    <ul class="card__description">
+                        <li>Porte: G</li>
+                        <li class="dog-cas">Não castrada</li>
+                        <li clas="dog-entre">Desde: 23/07/2020</li>
+                    </ul>
+                    <a href="#" class="card__button">Adotar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="assets/img/img.png" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Fly</h1>
+                <h3 class="dog-id">ID: 7 </h3>
+                <span class="dog-age"> 8 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
+                    <li>Castrado</li>
+                    <li>Desde: 28/11/2022</li>
+                </ul>
+                <a href="#" class="card__button">Adotar</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="inner-footer">
+            <div class="logo-container">
+                <img src="https://images2.imgbox.com/3c/c3/CgS7mF3L_o.png">
+            </div>
+        </div>
+    </div>
+    <script>
+
+        const search = () => {
+            const searchbox = document.getElementById("search-dogs").value.toUpperCase();
+            const dogsavalible = document.getElementById("dogs-to-adopt")
+            const dog = document.querySelectorAll(".dog-card")
+            const dogdata = dogsavalible.getElementsByClassName('dog-card-data')
+
+
+            for (var i = 0; i < dogdata.length; i++) {
+                let match = dog[i].getElementsByClassName('dog-card-data')[0];
+
+                if (match) {
+                    let textvalue = match.textContent || match.innerHTML
+
+                    if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
+                        dog[i].style.display = "";
+                    } else {
+                        dog[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>

@@ -240,7 +240,9 @@
             transition: .2s;
             opacity: 0;
         }
-
+        #input-age{
+            width: 10%;
+        }
         .card__button:hover {
             box-shadow: 0 18px 40px -12px rgba(242, 162, 12, .35);
         }
@@ -285,9 +287,7 @@
             transition-delay: .2s;
             opacity: 1;
         }
-        #input-button{
-            margin-top: 20%;
-        }
+
         input[type="button"] {
             cursor: pointer;
             font-size: 14px;
@@ -354,33 +354,41 @@
         <input type="button" id="menuAdmin" value="Remover" onclick="removeFunction()">
     </div>
     <div id="addCardContainer" style="display:none;">
-            <form>
-                <input id="input-name" type="text" name="username" placeholder="Nome*">
-                <input id="input-age" type="number" name="password" placeholder="Idade">
-                <input type="radio" name="porte" id="dot-4" required>>
+        <form>
+                <input id="input-name" type="text" name="username" placeholder="Nome" required>
+                <input type="checkbox" id="sex1" name="sex" value="Macho">
+                    <label for="sex1">Macho</label>
+                    <input type="checkbox" id="sex2" name="sex" value="Fêmea">
+                    <label for="sex2">Fêmea</label>
                 <input type="radio" name="porte" id="dot-1" required>
                 <label for="dot-1">
                     <span class="dot one"></span>
-                    <span>Pequeno</span>
+                    <span>P</span>
                 </label>
                 <input type="radio" name="porte" id="dot-2">
                 <label for="dot-2">
                     <span class="dot two"></span>
-                    <span>Médio</span>
+                    <span>M</span>
                 </label>
                 <input type="radio" name="porte" id="dot-3">
                 <label for="dot-3">
                     <span class="dot three"></span>
-                    <span>Grande</span>
+                    <span>G</span>
                 </label>
+                <select id="senioridade" required>
+                  <option selected disabled value="">Castração</option>
+                  <option>Sim</option>
+                  <option>Não</option>
+                </select>
+                  <input id="input-age" type="text" name="age" placeholder="Idade">
                 <input id="input-button" type="button" value="Adicionar" onclick="myFunction()">
             </form>
     </div>
     <div id="removeCardContainer" style="display:none;">
             <form>
+                <p>ID do cão que deseja remover</p>
                 <input id="input-user" type="number" name="idremovedog" placeholder="ID*" required>
                 <input id="input-button" type="button" value="Remover" onclick="location.href = 'MenuAdmin.html';">
-                <p>ID do cão que deseja remover</p>
             </form>
     </div>
     <div class="container" id="dogs-to-adopt">
@@ -560,6 +568,30 @@
                 <span class="dog-sex">M</span>
                 <ul class="card__description">
                     <li>Porte: M</li>
+                    <li class="dog-cas">Castração: N</li>
+                    <li clas="dog-entre">Desde: 23/07/2020</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">A caminho</option>
+                          <option>Em adoção</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+                <a href="#" class="card__button">Atualizar</a>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/eba1e244d1b42d60abcf4e2d2368230d/dd52d121e53f5738-47/s400x600/e351896e009ba8d415ab05e0011b0788b9e80503.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Luna</h1>
+                <h3 class="dog-id">ID: 8 </h3>
+                <span class="dog-age">4 anos - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
                     <li class="dog-cas">Castração: S</li>
                     <li clas="dog-entre">Desde: 23/07/2020</li>
                     <label for="status"><strong>Status</strong></label>
@@ -574,37 +606,11 @@
             </div>
         </div>
 
-        <div id="false-add" style="display:none;">
-            <div class="dog-card">
-                <img src="https://64.media.tumblr.com/a5f898aaa4e51b53ae3bd6c399f7f7c4/78e3808f827b2a8c-b5/s400x600/b4f0652681bd009d5b96c718877377559866a598.jpg"
-                    alt="" class="card__img">
-                <div class="dog-card-data">
-                    <h1 class="dog-name">Katiana</h1>
-                    <h3 class="dog-id">ID: 6 </h3>
-                    <span class="dog-age">7 anos - </span>
-                    <span class="dog-sex">F</span>
-                    <ul class="card__description">
-                        <li>Porte: G</li>
-                        <li class="dog-cas">Castração: S</li>
-                        <li clas="dog-entre">Desde: 23/07/2020</li>
-                        <label for="status"><strong>Status</strong></label>
-                        <select id="status" required>
-                          <option selected disabled value="">A caminho</option>
-                          <option>Em adoção</option>
-                          <option>Em processo</option>
-                          <option>Adotado</option>
-                        </select>
-                    </ul>
-                    <a href="#" class="card__button">Atualizar</a>
-                </div>
-            </div>
-        </div>
-
         <div class="dog-card">
-            <img src="assets/img/img.png" alt="" class="card__img">
+            <img src="https://64.media.tumblr.com/2f4d3ecd4b5232bc3f0617bf558b791e/dd52d121e53f5738-c9/s400x600/5451f3a998e159e585a2b0fe8c9bdaa73236dcdb.pnj" alt="" class="card__img">
             <div class="dog-card-data">
                 <h1 class="dog-name">Nina</h1>
-                <h3 class="dog-id">ID: 8 </h3>
+                <h3 class="dog-id">ID: 9 </h3>
                 <span class="dog-age"> 2 anos - </span>
                 <span class="dog-sex">F</span>
                 <ul class="card__description">
@@ -627,7 +633,7 @@
             <img src="assets/img/img.png" alt="" class="card__img">
             <div class="dog-card-data">
                 <h1 class="dog-name">Fly</h1>
-                <h3 class="dog-id">ID: 9 </h3>
+                <h3 class="dog-id">ID: 10 </h3>
                 <span class="dog-age"> 5 anos - </span>
                 <span class="dog-sex">M</span>
                 <ul class="card__description">
@@ -643,6 +649,31 @@
                         </select>
                 </ul>
                 <a href="#" class="card__button">Atualizar</a>
+            </div>
+        </div>
+        <div id="false-add" style="display:none;">
+            <div class="dog-card">
+                <img src=""
+                    alt="" class="card__img">
+                <div class="dog-card-data">
+                    <h1 class="dog-name">Katiana</h1>
+                    <h3 class="dog-id">ID: 11 </h3>
+                    <span class="dog-age">7 anos - </span>
+                    <span class="dog-sex">F</span>
+                    <ul class="card__description">
+                        <li>Porte: G</li>
+                        <li class="dog-cas">Castração: S</li>
+                        <li clas="dog-entre">Desde: 23/07/2020</li>
+                        <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">A caminho</option>
+                          <option>Em adoção</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                    </ul>
+                    <a href="#" class="card__button">Atualizar</a>
+                </div>
             </div>
         </div>
     </div>

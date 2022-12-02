@@ -16,21 +16,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /*===== VARIABLES CSS =====*/
-        :root {
-            /*===== Colores =====*/
-            --first-color: #F2A20C;
-            --white-color: #E9EAEC;
-            --dark-color: #272D40;
-            --dark-color-lighten: #3e2d1e;
-            /*===== Fuente y tipografia =====*/
-            --h1-font-size: 1.5rem;
-            --h2-font-size: 1.25rem;
-            --normal-font-size: 1rem;
-            --small-font-size: 1rem;
-        }
-
-        /*===== BASE =====*/
         *,
         ::before,
         ::after {
@@ -45,26 +30,20 @@
         body {
             margin: 0;
             padding: 0;
-            font-size: var(--normal-font-size);
+            font-size: 1rem;
             background-color: #bb9a6f;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-
-        h1,
-        p {
-            margin: 0;
-        }
-
         a {
             text-decoration: none;
         }
 
         nav {
             position: fixed;
-            height: 269px;
+            height: 16.8rem;
             left: 20px;
             top: 0;
             bottom: 0;
@@ -185,19 +164,20 @@
         }
 
         .dog-card {
-            width: 235px;
-            height: 390px;
-            background-color: var(--white-color);
+            width: 14.6rem;
+            height: 24rem;
+            background-color: #ecdec9;
             border-radius: 1rem;
             padding: 4rem 2rem 0;
-            color: var(--white-color);
+            color: #ecdec9;
             overflow-y: hidden;
             margin-bottom: auto;
         }
 
         .card__img {
             position: absolute;
-            width: 180px;
+            width: 11rem;
+            border-radius: .2rem;
         }
 
         .dog-card-data {
@@ -206,26 +186,26 @@
         }
 
         .dog-name {
-            font-size: var(--h1-font-size);
-            color: var(--first-color);
+            font-size:  1.5rem;
+            color: #3e2d1e;
         }
 
         .dog-id {
-            font-size: var(--h3-font-size);
+            font-size: 1.2rem;
             color: #3e2d1e;
         }
 
         .dog-age,
         .dog-sex {
             display: inline-block;
-            font-size: var(--h2-font-size);
+            font-size: 1.1rem;
             font-weight: 500;
-            color: #272D40;
+            color: #3e2d1e;
         }
 
         .card__description {
-            font-size: var(--small-font-size);
-            color: #272D40;
+            font-size: 1rem;
+            color: #3e2d1e;
             text-align: initial;
             margin-bottom: .5rem;
             opacity: 0;
@@ -235,8 +215,8 @@
             display: block;
             width: max-content;
             padding: 1.125rem 2rem;
-            background-color: var(--first-color);
-            color: var(--white-color);
+            background-color: #3e2d1e;
+            color: #ecdec9;
             border-radius: .5rem;
             font-weight: 500;
             transition: .2s;
@@ -396,7 +376,7 @@
                     <li class="dog-cas">Castração: S</li>
                     <li clas="dog-entre">Desde: 28/11/2022</li>
                 </ul>
-                <a href="#" class="card__button">Adotar</a>
+                <a href="Adocao.html" class="card__button">Adotar</a>
             </div>
         </div>
 
@@ -413,7 +393,7 @@
                     <li class="dog-cas">Castração: S</li>
                     <li clas="dog-entre">Desde: 23/07/2020</li>
                 </ul>
-                <a href="#" class="card__button">Adotar</a>
+                <a href="Adocao.html" class="card__button">Adotar</a>
             </div>
         </div>
 
@@ -430,7 +410,7 @@
                     <li class="dog-cas">Castração: S</li>
                     <li clas="dog-entre">Desde: 28/11/2022</li>
                 </ul>
-                <a href="#" class="card__button">Adotar</a>
+                <a href="Adocao.html" class="card__button">Adotar</a>
             </div>
         </div>
 
@@ -448,7 +428,7 @@
                     <li class="dog-cas">Castração: S</li>
                     <li clas="dog-entre">Desde: 12/01/2022</li>
                 </ul>
-                <a href="#" class="card__button">Adotar</a>
+                <a href="Adocao.html" class="card__button">Adotar</a>
             </div>
         </div>
 
@@ -465,7 +445,7 @@
                     <li class="dog-cas">Castração: N</li>
                     <li clas="dog-entre">Desde: 28/06/2055</li>
                 </ul>
-                <a href="#" class="card__button">Adotar</a>
+                <a href="Adocao.html" class="card__button">Adotar</a>
             </div>
         </div>
 
@@ -482,7 +462,7 @@
                     <li class="dog-cas">Castração: S</li>
                     <li clas="dog-entre">Desde: 28/11/2022</li>
                 </ul>
-                <a href="#" class="card__button">Adotar</a>
+                <a href="Adocao.html" class="card__button">Adotar</a>
             </div>
         </div>
 
@@ -499,7 +479,7 @@
                     <li class="dog-cas">Castração: S</li>
                     <li clas="dog-entre">Desde: 23/07/2020</li>
                 </ul>
-                <a href="#" class="card__button">Adotar</a>
+                <a href="Adocao.html" class="card__button">Adotar</a>
             </div>
         </div>
 
@@ -516,7 +496,7 @@
                     <li class="dog-cas">Castração: S</li>
                     <li clas="dog-entre">Desde: 23/07/2020</li>
                 </ul>
-                <a href="#" class="card__button">Adotar</a>
+                <a href="Adocao.html" class="card__button">Adotar</a>
             </div>
         </div>
 
@@ -534,7 +514,7 @@
                         <li class="dog-cas">Não castrada</li>
                         <li clas="dog-entre">Desde: 23/07/2020</li>
                     </ul>
-                    <a href="#" class="card__button">Adotar</a>
+                    <a href="Adocao.html" class="card__button">Adotar</a>
                 </div>
             </div>
         </div>
@@ -551,7 +531,7 @@
                     <li>Castrado</li>
                     <li>Desde: 28/11/2022</li>
                 </ul>
-                <a href="#" class="card__button">Adotar</a>
+                <a href="Adocao.html" class="card__button">Adotar</a>
             </div>
         </div>
     </div>

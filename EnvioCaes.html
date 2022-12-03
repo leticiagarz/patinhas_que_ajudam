@@ -33,14 +33,14 @@
 
         nav {
             position: fixed;
-            height: 325px;
-            left: 20px;
+            height: 20.3rem;
+            left: 1.25rem;
             top: 0;
             bottom: 0;
             margin: auto 0;
             background-color: #ecdec9;
-            padding: 15px 10px;
-            border-radius: 30px;
+            padding: 0.9rem 0.6rem;
+            border-radius: 1.8rem;
         }
 
         nav ul {
@@ -66,8 +66,8 @@
         }
 
         nav ul li a svg {
-            width: 30px;
-            height: 60px;
+            width: 1.8rem;
+            height: 3.75rem;
         }
 
         nav ul li a svg path {
@@ -77,12 +77,11 @@
         nav ul li a span {
             position: absolute;
             background-color: #ecdec9;
-            font-family: sans-serif;
-            padding: 2px 15px;
-            border-radius: 30px;
-            margin-left: 20px;
-            font-weight: 600;
-            font-size: 15px;
+            padding: 0.125rem 0.9rem;
+            border-radius: 1.8rem;
+            margin-left: 1.25rem;
+            font-weight: 500;
+            font-size: 0.9rem;
             visibility: hidden;
             opacity: 0;
             transition: 0.2s all ease;
@@ -92,7 +91,7 @@
         nav ul li a:hover span {
             opacity: 1;
             visibility: visible;
-            margin-left: 50px;
+            margin-left: 3.1rem;
         }
 
         nav.active ul li a span {
@@ -119,77 +118,77 @@
         .card {
             background-color: white;
             text-align: center;
-            box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.25rem 1.3rem 0 rgba(0, 0, 0, 0.2);
             transition: 0.3s;
-            border-radius: 10px;
+            border-radius: 0.6rem;
             width: 23%;
             margin: 0 auto;
-            margin-top: 90px;
+            margin-top: 5.4rem;
         }
 
         .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
         }
 
         .usercontainer {
-            padding: 10px 6px;
+            padding: 0.6rem 0.3rem;
         }
 
         .container {
             margin: 0 auto;
-            margin-top: 20px;
+            margin-top: 1.25rem;
             width: 40%;
             background-color: #fff;
-            padding: 60px 30px;
-            border-radius: 5px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-            font-size: 16px;
+            padding: 3.75rem 1.8rem;
+            border-radius: 0.3rem;
+            box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
+            font-size: 1rem;
             display: flex;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
 
         .content form .user-details {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin: 20px 0 12px 0;
+            margin: 1.25rem 0 0.75rem 0;
             text-align: center;
         }
 
         form .user-details .input-box {
-            margin-bottom: 35px;
+            margin-bottom: 2.1rem;
             width: calc(100% / 2 - 35px);
         }
 
         form .input-box span.details {
             display: block;
             font-weight: 500;
-            margin-bottom: 5px;
+            margin-bottom: 0.3rem;
         }
 
         .user-details .input-box input {
-            height: 45px;
+            height: 2.8rem;
             width: 90%;
             text-align: center;
             outline: none;
-            font-size: 16px;
-            border-radius: 7px;
-            padding-left: 10px;
+            font-size: 1rem;
+            border-radius: 0.4rem;
+            padding-left: 0.6rem;
             border: 1px solid #ecdec9;
-            border-bottom-width: 2px;
+            border-bottom-width: 0.125rem;
             transition: all 0.3s ease;
         }
 
         .user-details .input-box-number input {
-            margin-top: -7px;
-            height: 46px;
+            margin-top: -0.4rem;
+            height: 2.8rem;
             width: 70%;
             text-align: center;
             outline: none;
-            font-size: 16px;
-            border-radius: 7px;
-            border: 1px solid #ecdec9;
-            border-bottom-width: 2px;
+            font-size: 1rem;
+            border-radius: 0.4rem;
+            border: 0.063rem solid #ecdec9;
+            border-bottom-width: 0.125rem;
             transition: all 0.3s ease;
         }
 
@@ -257,7 +256,7 @@
             width: 100%;
             border-radius: 7px;
             border: none;
-            color: #fff;
+            color: #ffffff;
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 1px;
@@ -303,11 +302,11 @@
             font-size: 1rem;
             font-weight: 500;
             background: #3e2d1e;
-            color: whitesmoke;
+            color: #ffffff;
             border-radius: 12px;
             outline: none;
             border-color: #3e2d1e;
-            padding: 8px;
+            padding: 0.5rem;
             display: flex;
             justify-content: center;
             display: flex;
@@ -319,7 +318,7 @@
 
 <body>
     <h1 id="title">Envio de cães</h1>
-    <p id="subtitle">Complete com as informações do cão encontrado e depois as suas</p>
+    <p id="subtitle">Complete com os dados do cão encontrado e depois com seus dados</p>
     <nav>
         <ul>
             <li>
@@ -391,7 +390,6 @@
         <div class="content">
             <form action="#">
                 <p>*Campos Obrigatórios</p>
-
                 <p>Etapa 1</p>
                 <div class="user-details">
                     <div class="input-box">
@@ -400,7 +398,7 @@
                     </div>
                     <div class="input-box-number">
                         <span class="details-age">Idade</span>
-                        <input type="number">
+                        <input type="text">
                     </div>
                     <div class="input-box">
                         <span class="details">Porte*</span>
@@ -470,7 +468,7 @@
                         <input type="text" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">Email*</span>
+                        <span class="details">E-mail*</span>
                         <input type="email" required>
                     </div>
                 </div>

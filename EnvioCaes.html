@@ -195,9 +195,9 @@
         .details-age {
             display: flex;
             justify-content: space-between;
-            margin-top: -40px;
-            margin-left: 135px;
-            margin-bottom: 13px;
+            margin-top: -2.5rem;
+            margin-left: 8.4rem;
+            margin-bottom: 0.8rem;
             text-align: center;
 
         }
@@ -206,14 +206,10 @@
             border-color: #3e2d1e;
         }
 
-        .user-details .input-box-number input:focus {
-            border-color: #3e2d1e;
-        }
-
         form .category {
             display: flex;
             width: 80%;
-            margin: 14px 0;
+            margin: 0.8rem 0;
         }
 
         form .category label {
@@ -225,12 +221,12 @@
         }
 
         form .category label .dot {
-            height: 18px;
-            width: 18px;
+            height: 1.1rem;
+            width: 1.1rem;
             border-radius: 50%;
-            margin-right: 5px;
+            margin-right: 0.3rem;
             background: #ecdec9;
-            border: 3px solid transparent;
+            border: 0.18rem solid transparent;
             transition: all 0.3s ease;
         }
 
@@ -252,21 +248,21 @@
         }
 
         #envioCaes {
-            height: 70px;
+            height: 4.3rem;
             width: 100%;
-            border-radius: 7px;
+            border-radius: 0.4rem;
             border: none;
             color: #ffffff;
-            font-size: 18px;
+            font-size: 1.1rem;
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.06rem;
             cursor: pointer;
             transition: all 0.3s ease;
             background: #3e2d1e;
         }
 
 
-        @media(max-width: 584px) {
+        @media(max-width: 36.5rem) {
             .container {
                 max-width: 100%;
                 flex-direction: column;
@@ -278,20 +274,20 @@
             }
 
             form .category {
-                width: 500%;
+                width: 100%;
             }
 
             .content form .user-details {
-                max-height: 300px;
+                max-height: 18.75rem;
                 overflow-y: scroll;
             }
 
             .user-details::-webkit-scrollbar {
-                width: 5px;
+                width: 0.3rem;
             }
         }
 
-        @media(max-width: 459px) {
+        @media(max-width: 28.6rem) {
             .container .content .category {
                 flex-direction: column;
             }
@@ -303,15 +299,15 @@
             font-weight: 500;
             background: #3e2d1e;
             color: #ffffff;
-            border-radius: 12px;
+            border-radius: 0.75ren;
             outline: none;
             border-color: #3e2d1e;
             padding: 0.5rem;
             display: flex;
             justify-content: center;
             display: flex;
-            margin-top: 10px;
-            margin-bottom: 25px;
+            margin-top: 0.6rem;
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
@@ -396,9 +392,9 @@
                         <span class="details">Nome*</span>
                         <input type="text" required>
                     </div>
-                    <div class="input-box-number">
-                        <span class="details-age">Idade</span>
-                        <input type="text">
+                    <div class="input-box">
+                        <span class="details">Idade</span>
+                        <input type="text" placeholder="ex: 1 ano ou 1 mês ">
                     </div>
                     <div class="input-box">
                         <span class="details">Porte*</span>

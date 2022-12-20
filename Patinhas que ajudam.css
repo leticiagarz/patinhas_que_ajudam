@@ -1,0 +1,48 @@
+* {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    }
+    #title {
+    color: #ecdec9;
+    margin-top: 20rem;
+    } 
+    #subtitle{
+        color: #3e2d1e;
+    }
+    body{
+        background-color: #bb9a6f;
+    } 
+    h4{
+        color: #3e2d1e;
+    }
+    .card{
+        background-color: #ffffff;
+        text-align: center;
+        box-shadow: 0 0.25rem 1.3rem 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 0.6rem; 
+        width: 23%;
+        margin: 0 auto;
+        margin-top: 5.6rem;
+    }
+    .card:hover {
+        box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    }
+    .container {
+        padding: 0.6rem 0.3rem;
+    }
+    div input, form input{
+        display: block;
+        border-color: #3e2d1e;
+        margin: 1.1rem auto;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        outline: none;
+    }
+     input[type = "button"]{
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-weight: 300;
+        background:#3e2d1e;
+        color: #ffffff;
+    }

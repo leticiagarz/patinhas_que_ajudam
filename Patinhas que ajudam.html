@@ -1,13 +1,13 @@
 <html>
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> 
-    
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="Patinhas que ajudam.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="style/Patinhas que ajudam.css" media="screen">
+        <script type = "text/javascript" src = "script/Patinhas que ajudam.js"></script>
+
         <title>Patinhas Que Ajudam</title>
     </head>
 <body>
@@ -35,28 +35,5 @@
         </div>
     </div>
 
-    <script>
-         const inputbutton = document.getElementById("input-button");
-        const username = document.getElementById("input-user");
-        const password = document.getElementById("input-password");
-
-        const autenticar = function()
-        {
-           
-            if(username.value == "2411" && password.value == "1501"){
-                window.location.href = "MenuAdmin.html";
-            }
-            else{
-                alert('Login ou senha incorretos');
-            }
-        }
-
-        inputbutton.addEventListener('click', () => autenticar())
-        
-            function myFunction() { 
-    document.getElementById("cardContainer").style.display="none"; 
-    document.getElementById("secondCardContainer").style.display="block"; 
-            }
-        </script>
 </body>
 </html>

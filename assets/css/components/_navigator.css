@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: fixed;
+    height: 16.8rem;
+    left: 1.25rem;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    background-color: #ecdec9;
+    padding: 0.8rem 0.6rem;
+    border-radius: 1.8rem;
+}
+.admin {
+    height: 9rem;
+}
+
+.form {
+    height: 20.3rem;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+}
+
+nav ul li {
+    width: 100%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #3e2d1e;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.2s all ease;
+}
+
+nav ul li a div {
+    text-decoration: none;
+    color: #ecdec9;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.2s all ease;
+}
+
+nav ul li a svg {
+    width: 1.8rem;
+    height: 3.7rem;
+}
+
+nav ul li a svg path {
+    transition: 0.2s all ease;
+}
+
+nav ul li a span {
+    position: absolute;
+    background-color: #ecdec9;
+    padding: 0.1rem 0.9rem;
+    border-radius: 1.8rem;
+    margin-left: 1.25rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s all ease;
+}
+
+nav ul li a.active span,
+nav ul li a:hover span {
+    opacity: 1;
+    visibility: visible;
+    margin-left: 3rem;
+}
+
+nav.active ul li a span {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    margin-left: 0;
+}
+
+nav.active ul li a:hover span {
+    margin-left: 0;
+}

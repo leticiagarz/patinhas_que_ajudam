@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/home-page.css" media="screen">
+        <script src = "./assets/scripts/home-page.js"></script>
+
+        <title>Patinhas Que Ajudam</title>
+    </head>
+<body>
+    <h1 id="title">Patinhas que Ajudam</h1>
+    <p id="subtitle">Não compre, adote!</p>
+    <div id="cardContainer">
+        <div class ="card">
+            <div class="container">
+        <h4>Selecione um menu:</h4>
+        <p><input type="button" value="Usuario" onclick="location.href = './pages/usuario/menu-usuario.html';"></p>
+        <p><input type="button" id="menuAdmin" value="Administrador" onclick="myFunction()"></p>
+            </div>
+        </div>
+    </div>
+    <div id="secondCardContainer" style="display:none;">
+        <div class ="card">
+            <div class="container">
+                <form>
+                <h3>Login</h3>
+                <input id="input-user" type="text" name="username" placeholder="Usuário" required>
+                <input id="input-password" type="password" name="password" placeholder="Senha" reaquired>
+                <input id="input-button" type="button" value="Entrar" onclick="location.href = './pages/menu-admin.html';">
+            </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

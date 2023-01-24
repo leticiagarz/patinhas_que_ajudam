@@ -1,0 +1,115 @@
+.dog-card {
+    width: 14rem;
+    height: 24rem;
+    background-color: #ecdec9;
+    border-radius: 1rem;
+    padding: 4rem 2rem 0;
+    color: #ecdec9;
+    overflow-y: hidden;
+    margin-bottom: auto;
+}
+
+.card__img {
+    position: absolute;
+    width: 11rem;
+    border-radius: .2rem;
+}
+
+.dog-card-data {
+    transform: translateY(13.2rem);
+    text-align: center;
+}
+
+.dog-name {
+    font-size:  1.5rem;
+    color: #3e2d1e;
+}
+
+.dog-id {
+    font-size: 1.2rem;
+    color: #3e2d1e;
+}
+
+.dog-age,
+.dog-sex {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #3e2d1e;
+}
+
+.card__description {
+    font-size: 1rem;
+    color: #3e2d1e;
+    text-align: initial;
+    margin-bottom: .5rem;
+    opacity: 0;
+}
+
+.card__button{
+    display: block;
+    width: max-content;
+    padding: 1.125rem 2rem;
+    background-color: #3e2d1e;
+    color: #ecdec9;
+    border-radius: .5rem;
+    font-weight: 500;
+    transition: .2s;
+    opacity: 0;
+}
+#input-age{
+    width: 10%;
+}
+
+.card__img,
+.dog-card-data,
+.dog-name,
+.dog-age,
+.dog-sex,
+.dog-id,
+.card__description {
+    transition: .5s;
+}
+
+.dog-card:hover .card__img {
+    transform: translate(-.1rem, -9.5rem);
+    
+}
+
+.dog-card:hover .dog-card-data {
+    transform: translateY(4.8rem);
+}
+
+.dog-card:hover .dog-name {
+    transform: translateX(-.3rem);
+}
+
+.dog-card:hover .dog-age {
+    transform: translateX(-2.8rem);
+}
+
+.dog-card:hover .dog-sex {
+    transform: translateX(-2.8rem);
+}
+
+.dog-card:hover .dog-id {
+    transform: translateX(-2.8rem);
+}
+
+.dog-card:hover .card__description,
+.dog-card:hover .card__button {
+    transition-delay: .2s;
+    opacity: 1;
+}
+
+input[type="button"] {
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 300;
+    background: #3e2d1e;
+    color: #ffff;
+    border-radius: 0.5rem;
+    outline: none;
+    border-color: #3e2d1e;
+    padding: 0.5rem;
+}

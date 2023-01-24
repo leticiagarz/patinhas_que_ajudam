@@ -1,0 +1,24 @@
+.search-container {
+    padding: 1.25rem;
+}
+
+.search-container form {
+    width: 100%;
+    border: 0.14rem solid rgb(63, 36, 4);
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #bb9a6f;
+}
+
+.search-container form input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.625rem;
+    background-color: #bb9a6f;
+}

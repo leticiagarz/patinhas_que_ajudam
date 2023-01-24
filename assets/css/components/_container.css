@@ -1,0 +1,21 @@
+#btnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 0.625rem;
+}
+
+.container {
+    margin-top: 0.625rem;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-bottom: 0%;
+}

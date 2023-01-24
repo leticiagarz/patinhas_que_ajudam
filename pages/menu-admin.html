@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".././assets/css/internal-menu.css" media="screen">
+    <script src = ".././assets/scripts/menu.js"></script>
+
+    <title>Menu Admin</title>
+</head>
+
+<body>
+    <nav class="admin">
+        <ul>
+            <li>
+                <a href="./menu-admin.html">
+                    <svg viewBox="1 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M14.364 13.1214C15.2876 14.045 15.4831 15.4211 14.9504 16.5362L16.4853 18.0711C16.8758 18.4616 16.8758 19.0948 16.4853 19.4853C16.0948 19.8758 15.4616 19.8758 15.0711 19.4853L13.5361 17.9504C12.421 18.4831 11.045 18.2876 10.1213 17.364C8.94975 16.1924 8.94975 14.2929 10.1213 13.1214C11.2929 11.9498 13.1924 11.9498 14.364 13.1214ZM12.9497 15.9498C13.3403 15.5593 13.3403 14.9261 12.9497 14.5356C12.5592 14.145 11.9261 14.145 11.5355 14.5356C11.145 14.9261 11.145 15.5593 11.5355 15.9498C11.9261 16.3403 12.5592 16.3403 12.9497 15.9498Z"
+                            fill="#bb9a6f" />
+                        <path d="M8 5H16V7H8V5Z" fill="#bb9a6f" />
+                        <path d="M16 9H8V11H16V9Z" fill="#bb9a6f" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M4 4C4 2.34315 5.34315 1 7 1H17C18.6569 1 20 2.34315 20 4V20C20 21.6569 18.6569 23 17 23H7C5.34315 23 4 21.6569 4 20V4ZM7 3H17C17.5523 3 18 3.44772 18 4V20C18 20.5523 17.5523 21 17 21H7C6.44772 21 6 20.5523 6 20V4C6 3.44772 6.44771 3 7 3Z"
+                            fill="#bb9a6f" />
+                    </svg>
+                    <span>Listagem</span>
+                </a>
+            </li>
+            <li>
+                <a href="../index.html">
+                    <svg viewBox="1 0 23 23" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.9481 14.8285L10.5339 16.2427L6.29122 12L10.5339 7.7574L11.9481 9.17161L10.1196 11H17.6568V13H10.1196L11.9481 14.8285Z"
+                            fill="currentColor" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M4.22183 19.7782C-0.0739419 15.4824 -0.0739419 8.51759 4.22183 4.22183C8.51759 -0.0739419 15.4824 -0.0739419 19.7782 4.22183C24.0739 8.51759 24.0739 15.4824 19.7782 19.7782C15.4824 24.0739 8.51759 24.0739 4.22183 19.7782ZM5.63604 18.364C2.12132 14.8492 2.12132 9.15076 5.63604 5.63604C9.15076 2.12132 14.8492 2.12132 18.364 5.63604C21.8787 9.15076 21.8787 14.8492 18.364 18.364C14.8492 21.8787 9.15076 21.8787 5.63604 18.364Z"
+                            fill="currentColor" />
+                    </svg>
+                    <span>Sair</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <h1 id="title">Listagem</h1>
+    <section class="search-container">
+        <form>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="3e2d1e" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z"
+                    fill="3e2d1e" />
+            </svg>
+            <input type="text" name="procurar" id="search-dogs" placeholder="ID: 0 ou Porte: P" onkeyup="search()">
+        </form>
+    </section>
+
+    <div id="btnContainer">
+        <input type="button" id="menuAdmin" value="Adicionar" onclick="addFunction()">
+        <input type="button" id="menuAdmin" value="Remover" onclick="removeFunction()">
+    </div>
+    <div id="addCardContainer" style="display:none;">
+        <form>
+                <input id="input-name" type="text" name="username" placeholder="Nome" required>
+                <input type="checkbox" id="sex1" name="sex" value="Macho">
+                    <label for="sex1">Macho</label>
+                    <input type="checkbox" id="sex2" name="sex" value="Fêmea">
+                    <label for="sex2">Fêmea</label>
+                <input type="radio" name="porte" id="dot-1" required>
+                <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span>P</span>
+                </label>
+                <input type="radio" name="porte" id="dot-2">
+                <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span>M</span>
+                </label>
+                <input type="radio" name="porte" id="dot-3">
+                <label for="dot-3">
+                    <span class="dot three"></span>
+                    <span>G</span>
+                </label>
+                <select id="castracao" required>
+                  <option selected disabled value="">Castração</option>
+                  <option>Sim</option>
+                  <option>Não</option>
+                </select>
+                  <input id="input-age" type="text" name="age" placeholder="Idade">
+                <input id="input-button" type="button" value="Adicionar" onclick="myFunction()">
+            </form>
+    </div>
+    <div id="removeCardContainer" style="display:none;">
+            <form>
+                <p>ID do cão que deseja remover</p>
+                <input id="input-user" type="number" name="idremovedog" placeholder="ID*" required>
+                <input id="input-button" type="button" value="Remover" onclick="location.href = 'MenuAdmin.html';">
+            </form>
+    </div>
+    <div class="container" id="dogs-to-adopt">
+
+        <div class="dog-card">
+            <img src="data:image/jpeg;base64,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"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Cachacinha</h1>
+                <h3 class="dog-id">ID: 0 </h3>
+                <span class="dog-age">9 anos - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li class="dog-size">Porte: G</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 28/11/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Adotado</option>
+                          <option>A caminho</option>
+                          <option>Disponível</option>
+                          <option>Em processo</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/8f1b8843f524f284dab7ac98557ba93d/f9a479c32656bd90-35/s250x400/ca3ce76f4588c96146891f43fac6e83dd868e19b.pnj" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Pink</h1>
+                <h3 class="dog-id">ID: 1 </h3>
+                <span class="dog-age">13 anos - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li class="dog-size">Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 23/07/2020</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Disponível</option>
+                          <option>A caminho</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/5636176f0ef764545a314e0ccb7aaff4/2f989866ea6d8efd-02/s250x400/f2333a70663d344618e0808d2c3508c1a81510c9.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Chico</h1>
+                <h3 class="dog-id">ID: 2 </h3>
+                <span class="dog-age"> 3 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li class="dog-size">Porte: P</li>
+                    <li class="dog-cas">Castração: N</li>
+                    <li clas="dog-entre">Desde: 29/04/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                    <select id="status" required>
+                      <option selected disabled value="">Disponível</option>
+                      <option>A caminho</option>
+                      <option>Em processo</option>
+                      <option>Adotado</option>
+                    </select>
+            </ul>
+        </div>
+    </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/926c27e9cf470de818399a3acd383d97/f9a479c32656bd90-99/s250x400/e8eb708a7beae9f6b2d34031966c24311a30c8f4.pnj" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Luli</h1>
+                <h3 class="dog-id">ID: 3 </h3>
+                <span class="dog-age"> 1 ano - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li class="dog-size">Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 28/11/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Disponível</option>
+                          <option>A caminho</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/c8526b3c61fbecb51b4618da1c290e62/dd52d121e53f5738-6c/s400x600/1bbd3b4040a6376d25a488f9ac38f6cf1224fc57.pnj" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Zeus</h1>
+                <h3 class="dog-id">ID: 4 </h3>
+                <span class="dog-age"> 3 meses - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: P</li>
+                    <li>Castração: N</li>
+                    <li>Desde: 02/12/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Em processo</option>
+                          <option>A caminho</option>
+                          <option>Disponível</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/e2ba2e5ac623d1d0f6bb79e184bf5417/f9a479c32656bd90-55/s400x600/6b5f8045c477c46431c74fabbc5dc74a2fd6908a.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Pingo</h1>
+                <h3 class="dog-id">ID: 5 </h3>
+                <span class="dog-age">6 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 12/01/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Disponivel</option>
+                          <option>A caminho</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/d9fcf7847b9a26d5fa8a94f96eae30cb/2f989866ea6d8efd-0b/s500x750/bd7e9b6ae3ee633bd274314c5e2c49333561b82a.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Betinho</h1>
+                <h3 class="dog-id">ID: 6 </h3>
+                <span class="dog-age"> 2 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li class="dog-size">Porte: P</li>
+                    <li class="dog-cas">Castração: N</li>
+                    <li clas="dog-entre">Desde: 05/03/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                    <select id="status" required>
+                      <option selected disabled value="">Disponivel</option>
+                      <option>A caminho</option>
+                      <option>Em processo</option>
+                      <option>Adotado</option>
+                    </select>
+            </ul>
+        </div>
+    </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/d2c7f72fd8c61d8c4b385dd30691c115/dd52d121e53f5738-4f/s500x750/d102cf8b22deedceb7330350ebfd18dc0796aabc.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Jake</h1>
+                <h3 class="dog-id">ID: 7 </h3>
+                <span class="dog-age">6 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: P</li>
+                    <li class="dog-cas">Castração: N</li>
+                    <li clas="dog-entre">Desde: 28/06/2055</li>
+                        <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Disponível</option>
+                          <option>A caminho</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/e0a569ea74af89564e375009f54e4658/dd52d121e53f5738-b6/s400x600/9b10c6b048758fc8299d2c34eaf94cfd77380efe.pnj" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Oreo</h1>
+                <h3 class="dog-id">ID: 8 </h3>
+                <span class="dog-age"> 3 meses - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
+                    <li>Castração: N</li>
+                    <li>Desde: 02/12/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">A caminho</option>
+                          <option>Disponível</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/5bf6ff6c0c3c146cbc1472be47731048/dd52d121e53f5738-02/s250x400/320929e2ca33db17385341497c6a1ac2fda0c883.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Biscoito</h1>
+                <h3 class="dog-id">ID: 9 </h3>
+                <span class="dog-age"> 2 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li class="dog-size">Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 09/09/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                    <select id="status" required>
+                      <option selected disabled value="">Disponível</option>
+                      <option>A caminho</option>
+                      <option>Em processo</option>
+                      <option>Adotado</option>
+                    </select>
+            </ul>
+        </div>
+    </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/1d295d4d6c145380e7afe419a9e2be61/f9a479c32656bd90-0d/s250x400/0f6f3a916c4e88741b79f440ac384a91c712e632.pnj" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Scooby</h1>
+                <h3 class="dog-id">ID:  10</h3>
+                <span class="dog-age">2 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 28/11/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                    <select id="status" required>
+                      <option selected disabled value="">Disponível</option>
+                      <option>A caminho</option>
+                      <option>Em processo</option>
+                      <option>Adotado</option>
+                    </select>
+            </ul>
+        </div>
+    </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/68d1bd913d0fc9fd2628eddd86b7dad7/2f989866ea6d8efd-de/s250x400/0c05201f68b1133533dcddd520d88b3865f1cafe.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Smile</h1>
+                <h3 class="dog-id">ID:  11</h3>
+                <span class="dog-age">8 meses - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li>Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 06/10/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                    <select id="status" required>
+                      <option selected disabled value="">Disponível</option>
+                      <option>A caminho</option>
+                      <option>Em processo</option>
+                      <option>Adotado</option>
+                    </select>
+            </ul>
+        </div>
+    </div>
+
+    <div class="dog-card">
+        <img src="https://64.media.tumblr.com/2f4d3ecd4b5232bc3f0617bf558b791e/dd52d121e53f5738-c9/s400x600/5451f3a998e159e585a2b0fe8c9bdaa73236dcdb.pnj" alt="" class="card__img">
+        <div class="dog-card-data">
+            <h1 class="dog-name">Nina</h1>
+            <h3 class="dog-id">ID: 12 </h3>
+            <span class="dog-age"> 2 anos - </span>
+            <span class="dog-sex">F</span>
+            <ul class="card__description">
+                <li>Porte: P</li>
+                <li>Castração: NS</li>
+                <li>Desde: 28/11/2022</li>
+                <label for="status"><strong>Status</strong></label>
+                    <select id="status" required>
+                      <option selected disabled value="">Em processo</option>
+                      <option>A caminho</option>
+                      <option>Disponível</option>
+                      <option>Adotado</option>
+                    </select>
+            </ul>
+        </div>
+    </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/983bf9cb8d62ec063a2bf903b41f63eb/f9a479c32656bd90-93/s250x400/340909afd542186917c31c3be040ee54f044afc1.pnj" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Luna</h1>
+                <h3 class="dog-id">ID: 13 </h3>
+                <span class="dog-age">6 meses - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li>Porte: P</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 23/07/2020</li>
+                    <label for="status"><strong>Status</strong></label>
+                    <select id="status" required>
+                      <option selected disabled value="">Disponível</option>
+                      <option>A caminho</option>
+                      <option>Em processo</option>
+                      <option>Adotado</option>
+                    </select>
+            </ul>
+        </div>
+    </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/0e1463b8bbb1be75bed7a95021d37e94/f9a479c32656bd90-96/s250x400/4047f8439a73854e072dd47db3935ccf1e7c08a2.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Bingo</h1>
+                <h3 class="dog-id">ID: 14 </h3>
+                <span class="dog-age">4 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
+                    <li class="dog-cas">Castração: N</li>
+                    <li clas="dog-entre">Desde: 23/07/2020</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Disponivel</option>
+                          <option>A caminho</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/eba1e244d1b42d60abcf4e2d2368230d/dd52d121e53f5738-47/s400x600/e351896e009ba8d415ab05e0011b0788b9e80503.pnj"
+                alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Luna</h1>
+                <h3 class="dog-id">ID: 15 </h3>
+                <span class="dog-age">4 anos - </span>
+                <span class="dog-sex">F</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
+                    <li class="dog-cas">Castração: S</li>
+                    <li clas="dog-entre">Desde: 23/07/2020</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Adotado</option>
+                          <option>A caminho</option>
+                          <option>Disponível</option>
+                          <option>Em processo</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/397067b828208311db22acecb8775d64/dd52d121e53f5738-9a/s500x750/9dfdcfe889771d672f7cbbf0ca3d86b8a177217c.pnj" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Zezinho</h1>
+                <h3 class="dog-id">ID: 16 </h3>
+                <span class="dog-age"> 5 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: P</li>
+                    <li>Castração: N</li>
+                    <li>Desde: 28/11/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Adotado</option>
+                          <option>A caminho</option>
+                          <option>Disponível</option>
+                          <option>Em processo</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/321a7c34b965719502268ba85d112686/dd52d121e53f5738-12/s500x750/e2c955e912e1f17cdaa6a6339cbd826ac335f8b6.pnj" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Caramelo</h1>
+                <h3 class="dog-id">ID: 17 </h3>
+                <span class="dog-age"> 7 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
+                    <li>Castração: N</li>
+                    <li>Desde: 28/11/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">A caminho</option>
+                          <option>Disponível</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="https://64.media.tumblr.com/b44592397fce192bc6c1cc0292022af0/2f989866ea6d8efd-40/s250x400/9c5466b4779c5f5a057c913ed184984625bb32ab.pnj" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Belinha</h1>
+                <h3 class="dog-id">ID: 18 </h3>
+                <span class="dog-age"> 5 meses - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: M</li>
+                    <li>Castração: N</li>
+                    <li>Desde: 02/12/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">A caminho</option>
+                          <option>Disponível</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dog-card">
+            <img src="assets/img/img.png" alt="" class="card__img">
+            <div class="dog-card-data">
+                <h1 class="dog-name">Emerson</h1>
+                <h3 class="dog-id">ID: 19 </h3>
+                <span class="dog-age"> 5 anos - </span>
+                <span class="dog-sex">M</span>
+                <ul class="card__description">
+                    <li>Porte: G</li>
+                    <li>Castração: NS</li>
+                    <li>Desde: 02/12/2022</li>
+                    <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">A caminho</option>
+                          <option>Disponível</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                </ul>
+            </div>
+        </div>
+        <div id="false-add" style="display:none;">
+            <div class="dog-card">
+                <img src=""
+                    alt="" class="card__img">
+                <div class="dog-card-data">
+                    <h1 class="dog-name">Xuxu</h1>
+                    <h3 class="dog-id">ID: 20 </h3>
+                    <span class="dog-age">3 anos - </span>
+                    <span class="dog-sex">F</span>
+                    <ul class="card__description">
+                        <li>Porte: G</li>
+                        <li class="dog-cas">Castração: S</li>
+                        <li clas="dog-entre">Desde: 14/12/2022</li>
+                        <label for="status"><strong>Status</strong></label>
+                        <select id="status" required>
+                          <option selected disabled value="">Disponível</option>
+                          <option>A caminho</option>
+                          <option>Em processo</option>
+                          <option>Adotado</option>
+                        </select>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
